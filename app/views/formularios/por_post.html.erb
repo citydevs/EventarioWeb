@@ -1,0 +1,41 @@
+<%= form_tag({:controller => "formularios", :action => "por_post"}, :method => "post") do %>
+<% end %>
+
+<h2> Agrega un Evento </h2>
+<%= form_tag({:controller => "formularios", :action => "por_post"}, :method => "post") do %>
+
+   <%= label_tag "nombre", "Nombre del Evento" %>
+   <br />
+   <%= text_field_tag "nombre", "", :required => "required" %>
+   <br />
+
+   <%= label_tag "lugar", "Lugar del Evento" %>
+   <br />
+   <%= text_field_tag "lugar", "", :required => "required" %>
+   <br />
+   
+   <%= label_tag "direccion", "Direccion del Evento" %>
+   <br />
+   <%= text_field_tag "direccion", "", :required => "required" %>
+   <br />
+   <div id="map_canvas" style="width:500px;height:500px;"></div>
+   Lat: <input type="text" id="lat"><br>
+Lng: <input type="text" id="lng">
+   <%= label_tag "Comentario", "Descripcción del Evento" %>
+   <br />
+   <%= text_area_tag "comentario", "", :cols => 50, :rows => 10, :required => "required" %>
+   <br />
+   
+
+
+   <%= submit_tag "Enviar comentario" %>
+	<% end %>
+
+<% if @comentario %>
+   <p> <strong><%= @comentario[:nombre] %></strong>, Gracias por publicar tu comentario </p>
+   <div class="comentario">
+      <%= simple_format (@comentario[:consulta]) %>
+      <%= simple_format (@comentario[:lugar]) %>
+      <%= simple_format (@comentario[:direccion]) %>
+   </div>
+<% end %>

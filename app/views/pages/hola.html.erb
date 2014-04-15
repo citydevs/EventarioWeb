@@ -1,0 +1,88 @@
+
+
+  <div class="container">
+    <!-- Example row of columns -->
+    <div class="row">
+      <div class="col-md-2">
+      <ul class="nav nav-pills nav-stacked">
+      <h2>SDK</h2>
+	  <li><a href="#global"><i class="icon-chevron-right"></i>iOS</a></li>
+      <li><a href="#gridSystem"><i class="icon-chevron-right"></i>Titanium</a></li>
+      <li><a href="#gridSystem"><i class="icon-chevron-right"></i>Android</a></li>
+	  </ul>
+      </div>
+      <div class="row">
+      <div class="col-xs-12">
+      </div>	
+      </div>	
+      <div class="col-md-9 box">
+      		<div class="row">
+		        <div class="col-xs-12">
+		        <h2>iOS SDK</h2>
+		        <div class="col-xs-6">
+
+		        	<%= form_tag({:controller => "application", :action => "por_post"}, :method => "post") do %>
+<% end %>
+<h2> Posteá un comentario </h2>
+<%= form_tag({:controller => "formularios", :action => "por_post"}, :method => "post") do %>
+   <%= label_tag "nombre", "Nombre" %>
+   <br />
+   <%= text_field_tag "nombre", "", :required => "required" %>
+   <br />
+   <%= label_tag "Comentario", "comentario" %>
+   <br />
+   <%= text_area_tag "comentario", "", :cols => 50, :rows => 10, :required => "required" %>
+   <br />
+   <%= submit_tag "Enviar comentario" %>
+<% end %>
+<% if @comentario %>
+   <p> <strong><%= @comentario[:nombre] %></strong>, Gracias por publicar tu comentario </p>
+   <div class="comentario">
+      <%= simple_format (@comentario[:consulta]) %>
+   </div>
+<% end %>
+		        	 <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
+		        <p><a class="btn btn-default" href="#" role="button">Descargar &raquo;</a></p>
+		        </div>
+		        <div class="col-xs-6">
+		       	 <img src="http://socialgeek.co/wp-content/uploads/2013/09/ios7.png" alt="Responsive image" class="img-responsive">
+		    	</div>
+		       
+		     	</div>
+			 </div>
+			 <div class="row">
+		       <div class="col-xs-9">
+		        <h2>¿Qué es el IOS SDK ?</h2>
+		        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+		        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+		     </div>
+
+		       <div class="col-xs-3">
+		        <h2>Heading</h2>
+		        <p>Donec id elit non mi porta gravida at eget metus. Fusce dapibus, tellus ac cursus commodo, tortor mauris condimentum nibh, ut fermentum massa justo sit amet risus. Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+		        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+		     </div>
+		     </div>
+
+			  <div class="row">
+			  <div class="col-md-12">
+			    <div class="thumbhttps://fbcdn-dragon-a.akamaihd.net/hphotos-ak-prn1/t39.2178/851583_490814651009691_1462191575_n.png" alt="...">
+			      <div class="caption">
+			        <h3>Aplicaciones de Ejemplo</h3>
+			        <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum."</p>
+			        <p><a href="#" class="btn btn-primary" role="button">Button</a> <a href="#" class="btn btn-default" role="button">Button</a></p>
+			      </div>
+			    </div>
+			  </div>
+			  		
+			</div>
+
+     </div>
+
+     <div class="col-md-1">
+     	<h2>Status</h2>
+		        <p>Etiam porta sem malesuada magna mollis euismod. Donec sed odio dui. </p>
+		        <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+      </div>	
+      
+    </div>
