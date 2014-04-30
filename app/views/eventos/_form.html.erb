@@ -1,0 +1,112 @@
+<%= form_for(@evento) do |f| %>
+  <% if @evento.errors.any? %>
+    <div id="error_explanation">
+      <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
+
+      <ul>
+      <% @evento.errors.full_messages.each do |msg| %>
+        <li><%= msg %></li>
+      <% end %>
+      </ul>
+    </div>
+  <% end %>
+ <div class="col-md-9 box">
+
+  <div class="field">
+    <%= f.label :nombre, "Nombre del Evento *" %><br>
+    <%= f.text_field :nombre  %>
+  </div>
+  <div class="field">
+    <%= f.label :lugar, "Lugar donde sera el Evento *" %><br>
+    <%= f.text_field :lugar %>
+  </div>
+  <div class="col-xs-12">
+           
+            <div class="col-xs-6">
+
+              <div class="field">
+                <%= f.label :hora_inicio %><br>
+                <%= f.time_select :hora_inicio, :default=> {:hour=>"0",:minute=>"0"} %>
+              </div>
+              
+            </div>
+
+            <div class="col-xs-6">
+              <div class="field">
+                <%= f.label :hora_fin %><br>
+                <%= f.time_select :hora_fin %>
+              </div>
+            
+            </div>
+           
+   </div>
+  
+  
+
+  <div class="field">
+    <%= f.label :hora %><br>
+    <%= f.text_field :hora %>
+  </div>
+  <div class="field">
+    <%= f.label :descripcion, "Descripción del Evento *" %><br>
+    <%= f.text_area :descripcion %>
+  </div>
+  <div class="field">
+    <%= f.label :precio %><br>
+    <%= f.text_field :precio %>
+  </div>
+  <div class="field">
+    <%= f.label :direccion ,"Direccion *"%><br>
+    <%= f.text_field :direccion %>
+  </div>
+  <div class="field">
+    <%= f.label :fuente %><br>
+    <%= f.text_field :fuente %>
+  </div>
+    <div class="col-xs-12">
+      <div class="col-xs-6">
+        <div class="field">
+          <%= f.label :fecha_inicio %><br>
+          <%= f.date_select :fecha_inicio %>
+        </div>
+        </div>
+        <div class="col-xs-6">
+        <div class="field">
+          <%= f.label :fecha_fin %><br>
+          <%= f.date_select :fecha_fin %>
+        </div>
+        </div>
+   </div>
+  <div class="field">
+    <%= f.label :categoria %><br>
+    <%= f.text_field :categoria %>
+  </div>
+  <div class="field">
+    <%= f.label :contacto %><br>
+    <%= f.text_field :contacto %>
+  </div>
+  <div class="field">
+    <%= f.label :pagina %><br>
+    <%= f.text_field :pagina %>
+  </div>
+     <div id="map_canvas" style="width:90%;height:300px;"></div>
+
+   <div class="col-xs-12">
+      <div class="col-xs-6">
+  <div class="field">
+    <%= f.label :latitud %><br>
+    <%= f.text_field :latitud , :id=>'lat'%>
+  </div>
+  </div>
+  <div class="col-xs-6">
+  <div class="field">
+    <%= f.label :longitud %><br>
+    <%= f.text_field :longitud , :id=>'lng' %>
+  </div>
+  </div>
+  </div>
+  <div class="actions">
+    <%= f.submit %>
+  </div>
+   </div>
+<% end %>

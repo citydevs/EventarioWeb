@@ -21,26 +21,7 @@
 		        <h2>iOS SDK</h2>
 		        <div class="col-xs-6">
 
-		        	<%= form_tag({:controller => "application", :action => "por_post"}, :method => "post") do %>
-<% end %>
-<h2> Posteá un comentario </h2>
-<%= form_tag({:controller => "formularios", :action => "por_post"}, :method => "post") do %>
-   <%= label_tag "nombre", "Nombre" %>
-   <br />
-   <%= text_field_tag "nombre", "", :required => "required" %>
-   <br />
-   <%= label_tag "Comentario", "comentario" %>
-   <br />
-   <%= text_area_tag "comentario", "", :cols => 50, :rows => 10, :required => "required" %>
-   <br />
-   <%= submit_tag "Enviar comentario" %>
-<% end %>
-<% if @comentario %>
-   <p> <strong><%= @comentario[:nombre] %></strong>, Gracias por publicar tu comentario </p>
-   <div class="comentario">
-      <%= simple_format (@comentario[:consulta]) %>
-   </div>
-<% end %>
+	
 		        	 <p>"Lorem ipsum dolor sit amet, consectetur adipisicing elit, sed do eiusmod tempor incididunt ut labore et dolore magna aliqua. Ut enim ad minim veniam, quis nostrud exercitation ullamco laboris nisi ut aliquip ex ea commodo consequat. Duis aute irure dolor in reprehenderit in voluptate velit esse cillum dolore eu fugiat nulla pariatur. Excepteur sint occaecat cupidatat non proident, sunt in culpa qui officia deserunt mollit anim id est laborum." </p>
 		        <p><a class="btn btn-default" href="#" role="button">Descargar &raquo;</a></p>
 		        </div>

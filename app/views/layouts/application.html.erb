@@ -10,9 +10,9 @@
   <meta name="Keywords" content="<%= meta_keywords %>">
   
   <title><%= full_title(yield(:title)) %></title>
-  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false">         </script>
-  <%= stylesheet_link_tag    "application", media: "all", "data-turbolinks-track" => true %>
-  <%= javascript_include_tag "application", "data-turbolinks-track" => true %>
+  <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry">         </script>
+  <%= stylesheet_link_tag    "application" %>
+  <%= javascript_include_tag "application"%>
   <%= csrf_meta_tags %>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -32,14 +32,16 @@
           <span class="icon-bar"></span>
           <span class="icon-bar"></span>
         </button>
-        <%= link_to site_name, site_url, :class => "navbar-brand" %>
+        <%= link_to "Eventario", root_path, :class => "navbar-brand" %>
       </div>
       <div class="collapse navbar-collapse">
         <ul class="nav navbar-nav pull-right">
-          <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Home", root_path %></li>
-          <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
+          <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Inicio", root_path %></li>
+             <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "Mapa", mapa_path %></li>
+        <!--   <li class="<%= 'active' if current_page?(about_path) %>"><%= link_to "About", about_path %></li>
           <li class="<%= 'active' if current_page?(contact_path) %>"><%= link_to "Contact", contact_path %></li>
-          <li class="<%= 'active' if current_page?(hola_path) %>"><%= link_to "Hola", hola_path %></li>
+          <li class="<%= 'active' if current_page?(hola_path) %>"><%= link_to "Hola", hola_path %></li>-->
+          <li class="<%= 'active' if current_page?(new_evento_path) %>"><%= link_to "Registrar", new_evento_path %></li>
         </ul>
       </div><!-- /.nav-collapse -->
     </div><!-- /.container -->

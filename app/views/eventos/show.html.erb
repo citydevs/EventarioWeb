@@ -1,0 +1,84 @@
+<p id="notice"><%= notice %></p>
+
+<p>
+  <strong>Nombre:</strong>
+  <%= @evento.nombre %>
+</p>
+
+<p>
+  <strong>Lugar:</strong>
+  <%= @evento.lugar %>
+</p>
+
+<p>
+  <strong>Hora inicio:</strong>
+  <%= @evento.hora_inicio %>
+</p>
+
+<p>
+  <strong>Hora fin:</strong>
+  <%= @evento.hora_fin %>
+</p>
+
+<p>
+  <strong>Hora:</strong>
+  <%= @evento.hora %>
+</p>
+
+<p>
+  <strong>Descripcion:</strong>
+  <%= @evento.descripcion %>
+</p>
+
+<p>
+  <strong>Precio:</strong>
+  <%= @evento.precio %>
+</p>
+
+<p>
+  <strong>Direccion:</strong>
+  <%= @evento.direccion %>
+</p>
+
+<p>
+  <strong>Fuente:</strong>
+  <%= @evento.fuente %>
+</p>
+
+<p>
+  <strong>Fecha inicio:</strong>
+  <%= @evento.fecha_inicio %>
+</p>
+
+<p>
+  <strong>Fecha fin:</strong>
+  <%= @evento.fecha_fin %>
+</p>
+
+<p>
+  <strong>Categoria:</strong>
+  <%= @evento.categoria %>
+</p>
+
+<p>
+  <strong>Contacto:</strong>
+  <%= @evento.contacto %>
+</p>
+
+<p>
+  <strong>Pagina:</strong>
+  <%= @evento.pagina %>
+</p>
+
+<p>
+  <strong>Latitud:</strong>
+  <%= @evento.latitud %>
+</p>
+
+<p>
+  <strong>Longitud:</strong>
+  <%= @evento.longitud %>
+</p>
+
+<%= link_to 'Edit', edit_evento_path(@evento) %> |
+<%= link_to 'Back', eventos_path %>
