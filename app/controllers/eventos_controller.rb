@@ -2,6 +2,8 @@ require "net/http"
 class EventosController < ApplicationController
   before_action :set_evento, only: [:show, :edit, :update, :destroy]
 
+  before_action :authenticate_user!, only: [:edit, :new]
+
   # GET /eventos
   # GET /eventos.json
   def index
@@ -65,16 +67,16 @@ class EventosController < ApplicationController
     if params.has_key?(:latitud) && params.has_key?(:longitud)
       puts params[:latitud]
       response=Net::HTTP.get_response('codigo.labplc.mx','/~rockarloz/dejatecaer/dejatecaer.php?longitud='+params[:longitud]+'&latitud='+params[:latitud]+'&radio=2000')
-     
-    
+
+
     else
     response=Net::HTTP.get_response('codigo.labplc.mx','/~rockarloz/dejatecaer/dejatecaer.php?longitud=-99.13330667&latitud=19.42342714&radio=2000')
-    
+
     end
     respond_to do |f|
       f.html
       f.json { render json: response.body }
-    end  
+    end
   end
   private
     # Use callbacks to share common setup or constraints between actions.
