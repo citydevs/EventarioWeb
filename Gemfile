@@ -6,7 +6,17 @@ gem 'high_voltage'
 gem 'haml'
 gem 'haml-rails', :group => :development
 # Use sqlite3 as the database for Active Record
-#gem 'sqlite3'
+group :development, :test do
+  gem 'sqlite3'
+  gem 'rspec-rails', '2.13.1'
+  gem 'guard-rspec', '2.5.0'
+
+  gem 'spork-rails', '4.0.0'
+  gem 'guard-spork', '1.5.0'
+  gem 'childprocess'
+  gem 'annotate'
+
+end
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
@@ -30,11 +40,15 @@ gem 'turbolinks'
 gem 'jbuilder', '~> 1.2'
 
 # Gem for Postgress
-gem 'pg'
+
 
 group :doc do
   # bundle exec rake doc:rails generates the API under doc/api.
   gem 'sdoc', require: false
+end
+
+group :production do
+  gem "pg"
 end
 
 # Use ActiveModel has_secure_password

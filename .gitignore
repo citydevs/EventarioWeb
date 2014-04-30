@@ -1,0 +1,15 @@
+*.rbc
+/log
+/tmp
+/db/*.sqlite3
+/coverage/
+/spec/tmp
+**.orig
+
+
+## Environment normalisation:
+/.bundle
+/vendor/bundle
+
+# these should all be checked in to normalise the environment:
+# Gemfile.lock, .ruby-version, .ruby-gemset
