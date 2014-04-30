@@ -1,9 +1,9 @@
 *.rbc
-/log
-/tmp
-/db/*.sqlite3
-/coverage/
-/spec/tmp
+log
+tmp
+db/*.sqlite3
+coverage/
+spec/tmp
 **.orig
 
 
