@@ -102,7 +102,6 @@ GEM
     multi_json (1.9.3)
     nio4r (1.0.0)
     orm_adapter (0.5.0)
-    pg (0.17.1)
     polyglot (0.3.4)
     pry (0.9.12.6)
       coderay (~> 1.0)
@@ -200,7 +199,6 @@ DEPENDENCIES
   high_voltage
   jbuilder (~> 1.2)
   jquery-rails
-  pg
   rails (= 4.0.0)
   rspec-rails (= 2.13.1)
   sass-rails (~> 4.0.0)

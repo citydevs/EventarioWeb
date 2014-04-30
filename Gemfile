@@ -8,7 +8,7 @@ gem 'haml-rails', :group => :development
 gem 'devise'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
-  gem 'sqlite3'
+
   gem 'rspec-rails', '2.13.1'
   gem 'guard-rspec', '2.5.0'
 
@@ -49,9 +49,9 @@ group :doc do
 end
 
 group :production do
-  gem "pg"
-end
 
+end
+  gem 'sqlite3'
 # Use ActiveModel has_secure_password
 # gem 'bcrypt-ruby', '~> 3.0.0'
 
