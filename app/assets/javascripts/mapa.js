@@ -72,7 +72,7 @@ load_all_points = function(map) {
   callback = function(data) {
     return display_on_map(data, map);
   };
-  return $.get('/mapa.json', {}, callback, 'json');
+  return $.get('mapa.json', {}, callback, 'json');
 };
 
 load_from_position = function(map, lat, lon) {
@@ -80,7 +80,7 @@ load_from_position = function(map, lat, lon) {
   callback_to_map = function(data) {
     return display_on_map(data, map);
   };
-  return $.get('/mapa.json', {
+  return $.get('mapa.json', {
     latitud: lat,
     longitud: lon
   }, callback_to_map, 'json');
