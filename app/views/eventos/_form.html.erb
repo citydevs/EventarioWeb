@@ -10,7 +10,7 @@
       </ul>
     </div>
   <% end %>
- <div class="col-md-9 box">
+ <div class="col-md-12 box1">
 
   <div class="field">
     <%= f.label :nombre, "Nombre del Evento *" %><br>
@@ -89,6 +89,7 @@
     <%= f.label :pagina %><br>
     <%= f.text_field :pagina %>
   </div>
+  <%= f.label :nombre, "Indica en el mapa en donde será el  Evento *" %><br>
      <div id="map_canvas" style="width:90%;height:300px;"></div>
 
    <div class="col-xs-12">

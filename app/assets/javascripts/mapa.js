@@ -182,7 +182,7 @@ card = function(point) {
   horario_centro = "<p class='card_horario'>" + point.direccion + "</p>";
   telefonos_centro = "<p class='card_telefonos'>" +'<img src="hora.png" width="20" height="23" />'+ point.hora + "</p>";
   //hacer_cita = "<span class='card_cita'><a href='places/" + point.lugar + "'>Agenda una cita</a></span>";
-  return div_card_centro = "<div class='card'>" + nombre_centro + direccion_centro + horario_centro + telefonos_centro  + "</div>";
+  return div_card_centro = "<div class='col-md-12 box1'>"+"<div class='card'>" + nombre_centro + direccion_centro + horario_centro + telefonos_centro  + "</div></div>";
 };
 
 submit_ajax_form = function() {

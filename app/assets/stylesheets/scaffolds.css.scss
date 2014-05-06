@@ -1,6 +1,7 @@
+// son los espacio en blanco que faltaban y el footer
 body {
   background-color: #fff;
-  color: #333;
+  color: white;
   font-family: verdana, arial, helvetica, sans-serif;
   font-size: 13px;
   line-height: 18px;
@@ -66,4 +67,37 @@ div {
     font-size: 12px;
     list-style: square;
   }
+}
+.container_home{
+  
+    background-color: #fff;
+}
+.container_2{
+  
+    background-color: #F31734;
+}
+.container_head{
+  
+    background-color: #fff;
+}
+.jumbotron{
+  
+    background-color: #F31734;
+
+}
+.alert{
+  
+    background-color: #fff;
+
+}
+.notice{
+  
+    background-color: #fff;
+
+}
+
+li.active{
+  
+    background-color: white !important;
+
 }

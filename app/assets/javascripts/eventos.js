@@ -9,12 +9,15 @@ var myOptions = {
 
 }
 var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
-
+ 
 marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
         title: 'Default Marker',
-        draggable:true
+        draggable:true,
+      icon: {
+        url: '/pin.png'
+      }
 });
 
 
@@ -32,7 +35,7 @@ google.maps.event.addListener(
 google.maps.event.addListener(marker,'dragend',function(event) {
         document.getElementById('lat').value = this.position.lat();
         document.getElementById('lng').value = this.position.lng();
-        alert('Drag end');
+       // alert('Drag end');
     });
 
 

@@ -24,7 +24,7 @@
 </head>
 <body>
   <div class="navbar navbar-fixed-top navbar-inverse" role="navigation">
-    <div class="container">
+    <div class="container_head">
       <div class="navbar-header">
         <button type="button" class="navbar-toggle" data-toggle="collapse" data-target=".navbar-collapse">
           <span class="sr-only">Toggle navigation</span>
@@ -44,21 +44,21 @@
           <li class="<%= 'active' if current_page?(new_evento_path) %>"><%= link_to "Registrar", new_evento_path %></li>
           <% if user_signed_in? %>
             Logged in as <strong><%= current_user.email %></strong>.
-            <%= link_to 'Edit profile', edit_user_registration_path, :class => 'navbar-link' %> |
+            <%= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link' %> |
             <%= link_to "sign out", destroy_user_session_path, method: :delete %>
           <% else %>
             <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
             <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
           <% end %>
         </ul>
-      </div><!-- /.nav-collapse -->
+      </div>
     </div><!-- /.container -->
   </div><!-- /.navbar -->
 
   <% if current_page?(root_path) || current_page?(hola_path) %>
     <% if content_for?(:jumbotron) %>
       <div class="jumbotron">
-        <div class="container">
+        <div class="container_2">
           <%= yield :jumbotron %>
         </div>
       </div>
@@ -66,8 +66,8 @@
     <% else %>
       <div class="container">
   <% end %>
-    <p class="notice"><%= notice %></p>
-    <p class="alert"><%= alert %></p>
+ <!--    <p class="notice"><%= notice %></p>
+    <p class="alert"><%= alert %></p> -->
 
     <%= yield %>
     <footer>
@@ -76,11 +76,11 @@
         <%= link_to '<span class="glyphicon-class glyphicon glyphicon-chevron-up"></span> Back to top'.html_safe, '#Top' %>
       </p>
       <p>
-        &copy; <%= Time.now.year %> <%= site_name %>
+        &copy; <%= Time.now.year %> <%= "Eventario" %>
         &bull;
-        <%= link_to "Privacy", privacy_path %></li>
+        <%= link_to "Acerca de Eventario", privacy_path %></li>
         &bull;
-        <%= link_to "Terms", terms_path %></li>
+        <%= link_to "Terminos", terms_path %></li>
       </p>
     </footer>
   </div> <!-- /container -->

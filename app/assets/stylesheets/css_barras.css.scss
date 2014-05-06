@@ -1,3 +1,10 @@
 a.navbar-brand {
-  color: red !important;
+  color: #F31734 !important;
 }
+/* line 10, /Users/carloscastellanos/Desktop/Eventario_site/vendor/assets/stylesheets/bootstrap.min.css */
+.navbar-inverse .navbar-nav > .active > a, .navbar-inverse .navbar-nav > .active > a:hover, .navbar-inverse .navbar-nav > .active > a:focus {
+  color: #fff;
+  background-color: red !important;
+}
+
+
