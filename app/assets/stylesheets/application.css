@@ -3,3 +3,8 @@
  *= require_self
  *= require_tree .
  */
+ .nombre_evento{
+
+width: 100%;
+
+ }
