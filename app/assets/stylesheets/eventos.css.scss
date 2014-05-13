@@ -2,15 +2,18 @@
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #mapa{
-	
-	height:600px;
+
+  height:600px;
+      width: 100%;
 }
 #tarjetas {
-	max-height: 50%;
-	overflow-y:scroll; 
-	height: inherit;
-	height: 600px;
-	//overflow: scroll;
-	//width: 300px;
-	//float: right;
+  max-height: 100%;
+  overflow-y:scroll;
+  height: inherit;
+  height: 600px;
+      position: absolute;
+  //overflow: scroll;
+  //width: 300px;
+  //float: right;
 }
+
