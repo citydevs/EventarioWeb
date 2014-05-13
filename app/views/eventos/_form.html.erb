@@ -11,6 +11,8 @@
     </div>
   <% end %>
   <div class="row">
+    <div class="col-md-2">
+   </div>
  <div class="col-md-8 box1">
 
   <div class="field">
@@ -18,11 +20,24 @@
     <%= f.text_field :nombre, class: "text_formulario" ,placeholder:"Yoga CDMX" %>
   </div>
   <div class="field">
+ 
+
     <%= f.label :lugar, "Lugar donde sera el Evento *" , class: "label_formulario"%><br>
     <%= f.text_field :lugar , class: "text_formulario" ,placeholder:"Angel de la Independencia"  %>
   </div>
 
    <div class="field">
+       <%= f.label :calle, "Calle" , class: "label_formulario"%><br>
+           <%= f.text_field :nombre, class: "text_formulario" ,placeholder:"Yoga CDMX" %>
+       <%= f.label :calle, "Número" , class: "label_formulario"%><br>
+           <%= f.text_field :nombre, class: "text_formulario" ,placeholder:"Yoga CDMX" %>
+       <%= f.label :calle, "Colonia" , class: "label_formulario"%><br>
+           <%= f.text_field :nombre, class: "text_formulario" ,placeholder:"Yoga CDMX" %>
+        <%= f.label :Delegacion, class: "label_formulario" %><br>
+   
+     <%= f.select :categoria, options_for_select([ "Álvaro Obregón", "Azcapotzalco", "Benito Juárez", "Cuajimalpa de Morelos","Coyoacán","Cuauhtémoc","Gustavo A. Madero","Iztacalco", "Iztapalapa","La Magadalena Contreras","Miguel Hidalgo","Milpa Alta","Tláhuac","Tlalpan","Venustiano Carranza","Xochimilco" ], "Álvaro Obregón") %>
+       
+
     <%= f.label :direccion ,"Direccion *", class: "label_formulario"%><br>
     <%= f.text_field :direccion , class: "text_formulario" ,placeholder:"Av Viaducto Rio de la Piedad y Rio Churubusco S/N, Granjas México, Iztacalco, 08400 Ciudad de México" %>
   </div>
@@ -79,7 +94,7 @@
    <div class="field">
     <%= f.label :categoria, class: "label_formulario" %><br>
    
-     <%= f.select :categoria, options_for_select([ "Salud", "Arte", "Cultura", "Gastronomia","Teatro","Talleres","Música","Tecnología", "Exposiciones","Cine" ], "Salud") %>
+     <%= f.select :categoria, options_for_select([ "Deportivo", "Arte", "Cultura", "Gastronomia","Teatro","Talleres","Música","Tecnología", "Exposiciones","Cine" ], "Deportivo") %>
     </div>
   </div>
   <div class="col-xs-4">
@@ -133,9 +148,9 @@
   </div>
 </div>
 
-   <div class="col-md-1 ">
+   <div class="col-md-2 ">
    </div>
-  <div class="col-md-3 box1">
+ <!-- <div class="col-md-3 box1">
    <div class="row">
       
       <pre>
@@ -148,6 +163,6 @@
           <IMG align="middle" SRC="/labplc.jpg" WIDTH=98% HEIGHT=210 >
       </pre>      
       </div>
-   </div>
+   </div>-->
     </div>
 <% end %>
