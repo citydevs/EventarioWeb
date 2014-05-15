@@ -1,1 +1,1 @@
-json.extract! @evento, :id, :nombre, :lugar, :hora_inicio, :hora_fin, :hora, :descripcion, :precio, :direccion, :fuente, :fecha_inicio, :fecha_fin, :categoria, :contacto, :pagina, :latitud, :longitud, :created_at, :updated_at
+json.extract! @evento, :id, :nombre, :lugar, :hora_inicio, :hora_fin, :imagen, :descripcion, :precio, :direccion, :fuente, :fecha_inicio, :fecha_fin, :categoria, :contacto, :pagina, :latitud, :longitud, :created_at, :updated_at
