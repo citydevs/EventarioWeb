@@ -4,7 +4,7 @@
   <thead>
     <tr>
       <th>Nombre</th>
-      <th>Lugar</th>
+      <!--<th>Lugar</th>
       <th>Hora inicio</th>
       <th>Hora fin</th>
       <th>Hora</th>
@@ -18,7 +18,7 @@
       <th>Contacto</th>
       <th>Pagina</th>
       <th>Latitud</th>
-      <th>Longitud</th>
+      <th>Longitud</th>-->
       <th></th>
       <th></th>
       <th></th>
@@ -29,7 +29,7 @@
     <% @eventos.each do |evento| %>
       <tr>
         <td><%= evento.nombre %></td>
-        <td><%= evento.lugar %></td>
+      <!--  <td><%= evento.lugar %></td>
         <td><%= evento.hora_inicio %></td>
         <td><%= evento.hora_fin %></td>
         <td><%= evento.imagen %></td>
@@ -43,7 +43,7 @@
         <td><%= evento.contacto %></td>
         <td><%= evento.pagina %></td>
         <td><%= evento.latitud %></td>
-        <td><%= evento.longitud %></td>
+        <td><%= evento.longitud %></td>-->
         <td><%= link_to 'Show', evento %></td>
         <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
         <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>

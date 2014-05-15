@@ -1,0 +1,11 @@
+.boxfondo{
+-webkit-border-radius: 16px;
+border-radius: 16px;
+background-color:#bdbdbd;
+}
+.boxvacio{
+	
+	-webkit-border-radius: 16px;
+border-radius: 16px;
+background-color:#bdbdbd;
+}
