@@ -2,99 +2,100 @@
 <div class="row">
   <pre></pre>
 <div class="col-xs-12">
-  <div class="col-xs-1">
-  </div>
-    <div class="col-xs-10">
-  <div class="boxfondo">
-     <div class="col-xs-1">
-     </div>
-    <p>
-      <div class="col-xs-10">
-      <strong>Nombre:</strong>
-      <%= @evento.nombre %>
-    </p>
+        <div class="col-xs-1">
+        </div>
+              <div class="col-xs-10 box1">
+             
+                 <div class="col-xs-0.5">
+                 </div>
+                 <div class="col-xs-10">
+                <p>
+                  <strong>Nombre:</strong>
+                  <span class='eventos_textos'> <%= @evento.nombre %> </span>
+                </p>
 
-    <p>
-      <strong>Lugar:</strong>
-      <%= @evento.lugar %>
-    </p>
+                <p>
+                  <strong>Lugar:</strong>
+                  <%= @evento.lugar %>
+                </p>
 
-    <p>
-      <strong>Hora inicio:</strong>
-      <%= @evento.hora_inicio %>
-    </p>
+                <p>
+                  <strong>Hora inicio:</strong>
+                  <%= @evento.hora_inicio %>
+                </p>
 
-    <p>
-      <strong>Hora fin:</strong>
-      <%= @evento.hora_fin %>
-    </p>
+                <p>
+                  <strong>Hora fin:</strong>
+                  <%= @evento.hora_fin %>
+                </p>
 
-    <p>
-      <strong>Imagen:</strong>
-      <%= @evento.imagen %>
-    </p>
+                <p>
+                  <strong>Imagen:</strong>
+                   <p class="text-center">
+                    <img src="<%= @evento.imagen %>" class="img-responsive center-block ">
+                  </p>
+                  <%= @evento.imagen %>
+                </p>
 
-    <p>
-      <strong>Descripcion:</strong>
-      <%= @evento.descripcion %>
-    </p>
+                <p>
+                  <strong>Descripcion:</strong>
+                  <%= @evento.descripcion %>
+                </p>
 
-    <p>
-      <strong>Precio:</strong>
-      <%= @evento.precio %>
-    </p>
+                <p>
+                  <strong>Precio:</strong>
+                  <%= @evento.precio %>
+                </p>
 
-    <p>
-      <strong>Direccion:</strong>
-      <%= @evento.direccion %>
-    </p>
+                <p>
+                  <strong>Direccion:</strong>
+                  <%= @evento.direccion %>
+                </p>
 
-    <p>
-      <strong>Fuente:</strong>
-      <%= @evento.fuente %>
-    </p>
+                <p>
+                  <strong>Fuente:</strong>
+                  <%= @evento.fuente %>
+                </p>
 
-    <p>
-      <strong>Fecha inicio:</strong>
-      <%= @evento.fecha_inicio %>
-    </p>
+                <p>
+                  <strong>Fecha inicio:</strong>
+                  <%= @evento.fecha_inicio %>
+                </p>
 
-    <p>
-      <strong>Fecha fin:</strong>
-      <%= @evento.fecha_fin %>
-    </p>
+                <p>
+                  <strong>Fecha fin:</strong>
+                  <%= @evento.fecha_fin %>
+                </p>
 
-    <p>
-      <strong>Categoria:</strong>
-      <%= @evento.categoria %>
-    </p>
+                <p>
+                  <strong>Categoria:</strong>
+                  <%= @evento.categoria %>
+                </p>
 
-    <p>
-      <strong>Contacto:</strong>
-      <%= @evento.contacto %>
-    </p>
+                <p>
+                  <strong>Contacto:</strong>
+                  <%= @evento.contacto %>
+                </p>
 
-    <p>
-      <strong>Pagina:</strong>
-      <%= @evento.pagina %>
-    </p>
+                <p>
+                  <strong>Pagina:</strong>
+                  <%= @evento.pagina %>
+                </p>
 
-    <p>
-      <strong>Latitud:</strong>
-      <%= @evento.latitud %>
-    </p>
+                <p>
+                  <strong>Latitud:</strong>
+                  <%= @evento.latitud %>
+                </p>
 
-    <p>
-      <strong>Longitud:</strong>
-      <%= @evento.longitud %>
-    </p>
-     </div>
-    <div class="col-xs-1">
-     </div>
-    
-  </div>
-    </div>
+                <p>
+                  <strong>Longitud:</strong>
+                  <%= @evento.longitud %>
+                </p>
+                </div>
+            
+            </div>
 </div>
 </div>
-<%= link_to 'Edit', edit_evento_path(@evento) %> |
-<%= link_to 'Back', eventos_path %>
+  <pre></pre>
+<!--<%= link_to 'Edit', edit_evento_path(@evento) %> |
+<%= link_to 'Back', eventos_path %>-->
