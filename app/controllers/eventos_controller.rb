@@ -7,7 +7,11 @@ class EventosController < ApplicationController
   # GET /eventos
   # GET /eventos.json
   def index
-    @eventos = Evento.all
+    respond_to do |format|
+      format.html { @eventos = Evento.all.paginate(page: params[:page], per_page: 10)}
+      format.json { @eventos = Evento.all}
+    end
+
   end
 
   # GET /eventos/1
