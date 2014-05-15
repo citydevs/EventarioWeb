@@ -33,37 +33,30 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Brand</a>
+      <a class="navbar-brand" href="#">Eventario</a>
     </div>
 
     <div class="navbar-collapse collapse" id="navbar-collapsible">
 
       <ul class="nav navbar-nav navbar-left">
-        <li><a href="/mapa">Product</a></li>
-        <li><a href="#">Benefits</a></li>
-        <li><a href="#">Team</a></li>
-        <li>&nbsp;</li>
+        <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Inicio", root_path %></li>
+        <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "Mapa", mapa_path %></li>
+        
+         <li class="<%= 'active' if current_page?(new_evento_path) %>"><%= link_to "Registrar", new_evento_path %></li>
+
+        <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li>
+        <% if user_signed_in? %>
+            Logged in as <strong><%= current_user.email %></strong>.
+            <%= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link' %> |
+            <%= link_to "sign out", destroy_user_session_path, method: :delete %>
+          <% else %>
+            <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
+            <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
+          <% end %>
       </ul>
 
 
-      <form class="navbar-form">
-        <div class="form-group" style="display:inline;">
-          <div class="input-group">
-            <div class="input-group-btn">
-              <button type="button" class="btn btn-default dropdown-toggle" data-toggle="dropdown"><span class="glyphicon glyphicon-chevron-down"></span></button>
-              <ul class="dropdown-menu">
-                <li><a href="/mapa">Category 1</a></li>
-                <li><a href="#">Category 2</a></li>
-                <li><a href="#">Category 3</a></li>
-                <li><a href="#">Category 4</a></li>
-                <li><a href="#">Category 5</a></li>
-              </ul>
-            </div>
-            <input type="text" class="form-control" placeholder="What are searching for?">
-            <span class="input-group-addon"><span class="glyphicon glyphicon-search"></span> </span>
-          </div>
-        </div>
-      </form>
+    
 
     </div>
 
@@ -104,12 +97,13 @@
         </ul>
       </div>
     <div class="col-xs-6 col-md-3 column">
-        <h4>Customer Service</h4>
+        <h4>Código CDMX</h4>
         <ul class="nav">
-          <li><a href="#">About Us</a></li>
-          <li><a href="#">Delivery Information</a></li>
-          <li><a href="#">Privacy Policy</a></li>
-          <li><a href="#">Terms &amp; Conditions</a></li>
+          <li><a href="#">Verificalo</a></li>
+          <li><a href="#">Traxi</a></li>
+          <li><a href="#">Infomercado</a></li>
+          <li><a href="#">Cuidate!</a></li>
+          <li><a href="#">Checate Aqui</a></li>
         </ul>
       </div>
   </div>

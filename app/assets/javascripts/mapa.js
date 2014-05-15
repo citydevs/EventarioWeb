@@ -166,6 +166,8 @@ clean_map = function(map) {
 create_cards = function() {
   var point, _i, _len, _ref, _results;
   $("#tarjetas div").remove();
+  $(".space").remove();
+
   _ref = window.current_points;
   _results = [];
   for (_i = 0, _len = _ref.length; _i < _len; _i++) {
@@ -182,7 +184,7 @@ card = function(point) {
   horario_centro = "<p class='card_horario'>" + point.direccion + "</p>";
   telefonos_centro = "<p class='card_telefonos'>" +'<img src="hora.png" width="20" height="23" />'+ point.hora + "</p>";
   //hacer_cita = "<span class='card_cita'><a href='places/" + point.lugar + "'>Agenda una cita</a></span>";
-  return div_card_centro = "<div class='col-md-12 box1'>"+"<div class='card'>" + nombre_centro + direccion_centro + horario_centro + telefonos_centro  + "</div></div>";
+  return div_card_centro = "<div class='col-md-12 box1'>"+"<div class='card'>" + nombre_centro + direccion_centro + horario_centro + telefonos_centro  + "</div></div><pre class='space'></pre>";
 };
 
 submit_ajax_form = function() {
