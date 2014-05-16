@@ -9,7 +9,18 @@ class EventosController < ApplicationController
   def index
     respond_to do |format|
       format.html { @eventos = Evento.all.paginate(page: params[:page], per_page: 10)}
-      format.json { @eventos = Evento.all}
+      format.json {
+        if params[:lat] || params[:lon]
+          distancia = params[:dist] ||= 1
+          @eventos = Evento.pasando_hoy.near([params[:lat], params[:lon]], distancia,{ units: :km})
+          @eventos.each do |evento|
+            evento.distancia = evento.distance_to([params[:lat], params[:lon]], :km)
+          end
+        else
+          @eventos = Evento.pasando_hoy
+        end
+
+      }
     end
 
   end
@@ -85,7 +96,7 @@ class EventosController < ApplicationController
   private
     # Use callbacks to share common setup or constraints between actions.
     def set_evento
-      @evento = Evento.find(params[:id])
+      @evento = Evento.friendly.find(params[:id])
     end
 
     # Never trust parameters from the scary internet, only allow the white list through.

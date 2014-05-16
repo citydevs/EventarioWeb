@@ -72,7 +72,7 @@ load_all_points = function(map) {
   callback = function(data) {
     return display_on_map(data, map);
   };
-  return $.get('mapa.json', {}, callback, 'json');
+  return $.get('eventos.json', {}, callback, 'json');
 };
 
 load_from_position = function(map, lat, lon) {
@@ -80,9 +80,9 @@ load_from_position = function(map, lat, lon) {
   callback_to_map = function(data) {
     return display_on_map(data, map);
   };
-  return $.get('mapa.json', {
-    latitud: lat,
-    longitud: lon
+  return $.get('eventos.json', {
+    lat: lat,
+    lon: lon
   }, callback_to_map, 'json');
 };
 
@@ -90,7 +90,7 @@ display_on_map = function(data, map) {
   var centro, _i, _len, _ref;
   console.log(data);
   set_marker_map(null);
-  _ref = data.eventos;
+  _ref = data
   for (_i = 0, _len = _ref.length; _i < _len; _i++) {
     centro = _ref[_i];
     create_marker(centro, map);

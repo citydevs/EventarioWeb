@@ -24,7 +24,25 @@
 #
 
 class Evento < ActiveRecord::Base
+  extend FriendlyId
+  friendly_id :nombre, use: :slugged
   reverse_geocoded_by :latitud, :longitud
   validates :nombre, presence: true, uniqueness: true
+
+  attr_reader :distancia
+
+  def distancia=(val)
+    @distancia = val.round(2)
+  end
+
+  def quitar_fecha
+    puts hora_inicio = 0
+    self.hora_inicio = 0
+    a.save!
+  end
+
+  def self.pasando_hoy
+    Evento.where("? >= fecha_inicio AND ? <= fecha_fin", Date.today, Date.today)
+  end
 
 end
