@@ -16,10 +16,20 @@ group :development, :test do
   gem 'guard-spork', '1.5.0'
   gem 'childprocess'
   gem 'annotate'
+  gem 'pry'
 
+end
+
+group :test do
+  gem 'selenium-webdriver'
+  gem 'capybara'
+  gem 'libnotify'
+  gem 'factory_girl'
+  gem 'coveralls',  require: false
 end
 gem 'will_paginate', '~> 3.0'
 gem "geocoder"
+gem 'friendly_id', '~> 5.0.0'
 
 # Use SCSS for stylesheets
 gem 'sass-rails', '~> 4.0.0'
