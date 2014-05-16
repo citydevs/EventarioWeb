@@ -26,7 +26,16 @@
                     </p>
                     <p>
                       <strong>Direccion:</strong>
-                      <%= @evento.direccion %>
+                    <span class='eventos_textos'>  <%= @evento.direccion %></span>
+                    </p>
+                    <p>
+                      <strong>Fecha inicio:</strong>
+                    <span class='eventos_textos'>   <%= @evento.fecha_inicio %>  - <%= @evento.fecha_fin %></span>
+                    </p>
+
+                    <p>
+                      <strong>Fecha fin:</strong>
+                      <%= @evento.fecha_fin %>
                     </p>
 
                     <p>
@@ -70,16 +79,7 @@
                       <%= @evento.fuente %>
                     </p>
 
-                    <p>
-                      <strong>Fecha inicio:</strong>
-                      <%= @evento.fecha_inicio %>
-                    </p>
-
-                    <p>
-                      <strong>Fecha fin:</strong>
-                      <%= @evento.fecha_fin %>
-                    </p>
-
+                    
                     <p>
                       <strong>Categoria:</strong>
                       <%= @evento.categoria %>
@@ -92,7 +92,7 @@
 
                     <p>
                       <strong>Pagina:</strong>
-                      <%= @evento.pagina %>
+                      <a href='<%= @evento.pagina %>'><%= @evento.pagina %></a>
                     </p>
 
                     <p>
