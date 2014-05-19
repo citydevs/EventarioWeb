@@ -33,19 +33,21 @@
         <span class="icon-bar"></span>
         <span class="icon-bar"></span>
       </button>
-      <a class="navbar-brand" href="#">Eventario</a>
+      <a class="navbar-brand" href="">Eventario</a>
     </div>
 
     <div class="navbar-collapse collapse" id="navbar-collapsible">
 
       <ul class="nav navbar-nav navbar-left">
-        <li class="<%= 'active' if current_page?(root_path) %>"><%= link_to "Inicio", root_path %></li>
+        <li ><%= link_to "Inicio", root_path %></li>
         <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "Mapa", mapa_path %></li>
         
          <li class="<%= 'active' if current_page?(new_evento_path) %>"><%= link_to "Registrar", new_evento_path %></li>
 
         <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li>
-        <% if user_signed_in? %>
+        
+      </ul>
+<% if user_signed_in? %>
             Logged in as <strong><%= current_user.email %></strong>.
             <%= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link' %> |
             <%= link_to "sign out", destroy_user_session_path, method: :delete %>
@@ -53,11 +55,6 @@
             <%= link_to "Sign up", new_user_registration_path, :class => 'navbar-link'  %> |
             <%= link_to "Login", new_user_session_path, :class => 'navbar-link'  %>
           <% end %>
-      </ul>
-
-
-    
-
     </div>
 
   </div>
@@ -68,26 +65,26 @@
 <footer id="footer">
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-3 column">
-        <h4>Information</h4>
+    <div class="col-xs-6 col-sm-6 col-md-4 column">
+        <h4>Información</h4>
         <ul class="nav">
-          <li><a href="about-us.html">Products</a></li>
-          <li><a href="about-us.html">Services</a></li>
-          <li><a href="about-us.html">Benefits</a></li>
-          <li><a href="elements.html">Developers</a></li>
+          <li><%= link_to "Acerca de", about_path %></li>
+          <li><%= link_to "Términos de uso", privacy_path %></li>
+          <li><a href="http://codigo.labplc.mx/">Código CDMX</a></li>
+          <li><a href="http://labplc.mx/">LabPLC</a></li>
+         
         </ul>
       </div>
-    <div class="col-xs-6 col-md-3 column">
-        <h4>Follow Us</h4>
+    <div class="col-xs-6 col-md-4 column">
+        <h4>Redes Sociales</h4>
         <ul class="nav">
 
-           <li><a href="#">Twitter</a></li>
-          <li><a href="#">Facebook</a></li>
-          <li><a href="#">Google+</a></li>
-          <li><a href="#">Pinterest</a></li>
+           <li><a href="https://twitter.com/EventarioCDMX">Twitter</a></li>
+          <li><a href="https://www.facebook.com/EventarioCDMX">Facebook</a></li>
+         
         </ul>
       </div>
-    <div class="col-xs-6 col-md-3 column">
+   <!-- <div class="col-xs-6 col-md-3 column">
         <h4>Contact Us</h4>
         <ul class="nav">
           <li><a href="#">Email</a></li>
@@ -95,8 +92,8 @@
           <li><a href="#">Management</a></li>
           <li><a href="#">Support</a></li>
         </ul>
-      </div>
-    <div class="col-xs-6 col-md-3 column">
+      </div>-->
+    <div class="col-xs-6 col-md-4 column">
         <h4>Código CDMX</h4>
         <ul class="nav">
           <li><a href="#">Verificalo</a></li>

@@ -1,9 +1,13 @@
 <h1>Listing eventos</h1>
 <%= will_paginate @eventos %>
-<table>
+
+
+<table BORDER=1 WIDTH=50%>
   <thead>
     <tr>
       <th>Nombre</th>
+      <th>Fecha inicio</th>
+      <th>Fecha fin</th>
       <!--<th>Lugar</th>
       <th>Hora inicio</th>
       <th>Hora fin</th>
@@ -12,16 +16,14 @@
       <th>Precio</th>
       <th>Direccion</th>
       <th>Fuente</th>
-      <th>Fecha inicio</th>
-      <th>Fecha fin</th>
+      
       <th>Categoria</th>
       <th>Contacto</th>
       <th>Pagina</th>
       <th>Latitud</th>
       <th>Longitud</th>-->
       <th></th>
-      <th></th>
-      <th></th>
+      
     </tr>
   </thead>
 
@@ -29,6 +31,8 @@
     <% @eventos.each do |evento| %>
       <tr>
         <td><%= evento.nombre %></td>
+        <td><%= evento.fecha_inicio %></td>
+        <td><%= evento.fecha_fin %></td>
       <!--  <td><%= evento.lugar %></td>
         <td><%= evento.hora_inicio %></td>
         <td><%= evento.hora_fin %></td>
@@ -37,16 +41,15 @@
         <td><%= evento.precio %></td>
         <td><%= evento.direccion %></td>
         <td><%= evento.fuente %></td>
-        <td><%= evento.fecha_inicio %></td>
-        <td><%= evento.fecha_fin %></td>
+        
         <td><%= evento.categoria %></td>
         <td><%= evento.contacto %></td>
         <td><%= evento.pagina %></td>
         <td><%= evento.latitud %></td>
         <td><%= evento.longitud %></td>-->
-        <td><%= link_to 'Show', evento %></td>
-        <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
-        <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>
+        <td><%= link_to 'Mostrar', evento %></td>
+      <!--  <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
+        <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
       </tr>
     <% end %>
   </tbody>
