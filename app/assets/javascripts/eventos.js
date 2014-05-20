@@ -41,4 +41,8 @@ google.maps.event.addListener(marker,'dragend',function(event) {
 
   }
 
-  $(document).ready(function(){ initialize()})
+  $(document).ready(function(){
+   initialize()
+
+  
+ })

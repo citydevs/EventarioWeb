@@ -12,9 +12,6 @@
 //
 //= require jquery
 //= require jquery_ujs
+//= require jquery.ui.all
 //= require bootstrap.min
 //= require_tree . 
-
-   $(document).ready(function(){
-       $('.parallax').scrolly({bgParallax: true});
-    });

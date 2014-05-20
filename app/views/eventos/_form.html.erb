@@ -39,12 +39,19 @@
    <div class="col-xs-12">
       <div class="col-xs-6">
         <div class="field">
+
+<label for="from">From</label>
+<input type="text" id="from" name="from">
+<label for="to">to</label>
+<input type="text" id="to" name="to">
+
           <%= f.label :fecha_inicio, class: "label_formulario" %><br>
           <%= f.date_select :fecha_inicio %>
         </div>
       </div>
       <div class="col-xs-6">
         <div class="field">
+
           <%= f.label :fecha_fin , class: "label_formulario"%><br>
           <%= f.date_select :fecha_fin %>
         </div>
@@ -54,6 +61,8 @@
   <div class="col-xs-12">
            
             <div class="col-xs-6">
+
+
 
               <div class="field">
                 <%= f.label :hora_inicio , class: "label_formulario"%><br>
@@ -158,5 +167,10 @@
       </pre>      
       </div>
    </div>-->
+
     </div>
 <% end %>
+<%= javascript_include_tag "jquery"%>
+<%= javascript_include_tag "jquery.ui.all"%>
+
+

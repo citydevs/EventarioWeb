@@ -56,7 +56,7 @@ loc_success = function(position) {
     position: center,
     map: window.map,
     icon: {
-      url: 'arrows.png'
+      url: 'marker.png'
     }
   });
   clean_map(window.map);
@@ -148,7 +148,7 @@ moviendo_mapa = function() {
       position: window.map.getCenter(),
       map: window.map,
       icon: {
-        url: 'arrows.png'
+        url: 'marker.png'
       }
     });
   }

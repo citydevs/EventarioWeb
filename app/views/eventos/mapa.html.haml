@@ -1,4 +1,8 @@
 - provide(:titulo, 'Mapa')
+
+
+
+
 %h2 Encuentra tus eventos cercanos
 .container-fluid.explorar
   #contflu.row-fluid.contenedor
@@ -9,3 +13,4 @@
 
 = javascript_include_tag "jquery"
 = javascript_include_tag "mapa.js"
+<input name="button" type="button" onclick="get_current_location()" value="Localizame" /> 

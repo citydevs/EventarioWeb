@@ -6,6 +6,7 @@ gem 'high_voltage'
 gem 'haml'
 gem 'haml-rails', :group => :development
 gem 'devise'
+gem 'jquery-ui-rails'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
 
