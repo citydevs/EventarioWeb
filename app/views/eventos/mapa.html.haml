@@ -2,21 +2,23 @@
 
 
 
+#row
 
-%h2 Encuentra tus eventos 
+  #box.col-sm-12
+    %h2.eventos_textos Encuentra tus eventos 
+    .col-sm-3
+    .col-sm-12
+      %h4.eventos_textos Ingresa una dirección: 
+      %input{:type=>"text",:required => true,:id =>"lugar", :class=>"barra"}
+      %input{:onclick => "get_Address()", :type => "button", :value =>"Buscar"}
+      %input{:onclick => "localizar()", :type => "button", :value =>"Localizarme"}
 
-%input{:type=>"text",:required => true,:id =>"lugar"}
-// %input{:onclick => "get_Address()", :type => "button", :value =>"Buscar"}
-= link_to "Buscar ", "", :onclick => "get_Address(); return false";
-//= link_to "Buscar en la condesa", "", :onclick => "buscar_mapa(); return false";
-//= link_to "Localizarme", "", :onclick => "localizar(); return false"
-
-%input{:onclick => "localizar()", :type => "button", :value =>"Localizarme"}
-.container-fluid.explorar
-  #contflu.row-fluid.contenedor
-    #mapa.mapa.flexible.col-sm-8
-    #tarjetas.col-sm-4
-      %h2 Eventos
+  %pre#espacio  
+  .container-fluid.explorar
+    #contflu.row-fluid.contenedor
+      #mapa.mapa.flexible.col-sm-8
+      #tarjetas.col-sm-4
+        %h2 Eventos
 
 
 = javascript_include_tag "mapa.js"

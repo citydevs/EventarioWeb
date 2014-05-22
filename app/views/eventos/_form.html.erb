@@ -97,11 +97,14 @@
    <div class="field">
     <%= f.label :categoria, class: "label_formulario" %><br>
    
-     <%= f.select :categoria, options_for_select([ "Deportivo", "Arte", "Cultura", "Gastronomia","Teatro","Talleres","Música","Tecnología", "Exposiciones","Cine" ], "Deportivo") %>
+     <%= f.select :categoria, options_for_select([ "Deportivo", "Cine", "Exposiciones", "Infantile","Música","Cultura","Teatro","Aprendizaje" ], "Deportivo") %>
     </div>
   </div>
   <div class="col-xs-4">
   <div class="field">
+    <%= f.label :Entrada_Libre, class: "label_formulario" %><br>
+   
+     <%= f.select :categoria, options_for_select([ "Si", "No"], "Si") %>
     <%= f.label :precio , class: "label_formulario"%><br>
     <%= f.text_field :precio, class: "text_formulario" ,placeholder:"Entrada Libre"  %>
   </div>
