@@ -275,7 +275,7 @@ get_current_location = function() {
 get_Address=function () {
 
    console.log("direccion");
-   var sAddress = document.getElementById("lugar").value;
+   var sAddress = document.getElementById("lugar").value + "Mexico, D.F.";
  console.log(sAddress);
   geocoder.geocode( { 'address': sAddress}, function(results, status) { 
 
