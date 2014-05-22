@@ -3,7 +3,15 @@
 
 
 
-%h2 Encuentra tus eventos cercanos
+%h2 Encuentra tus eventos 
+
+%input{:type=>"text",:required => true,:id =>"lugar"}
+// %input{:onclick => "get_Address()", :type => "button", :value =>"Buscar"}
+= link_to "Buscar ", "", :onclick => "get_Address(); return false";
+//= link_to "Buscar en la condesa", "", :onclick => "buscar_mapa(); return false";
+//= link_to "Localizarme", "", :onclick => "localizar(); return false"
+
+%input{:onclick => "localizar()", :type => "button", :value =>"Localizarme"}
 .container-fluid.explorar
   #contflu.row-fluid.contenedor
     #mapa.mapa.flexible.col-sm-8
@@ -11,6 +19,4 @@
       %h2 Eventos
 
 
-= javascript_include_tag "jquery"
 = javascript_include_tag "mapa.js"
-<input name="button" type="button" onclick="get_current_location()" value="Localizame" /> 

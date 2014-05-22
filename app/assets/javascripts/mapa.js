@@ -1,5 +1,5 @@
 var card, clean_map, create_cards, create_marker, display_on_map, get_current_location, gm_init, infowindow, inicializa, load_all_points, load_from_position, loc_error, loc_success, moviendo_mapa, set_marker_map, submit_ajax_form;
-
+var geocoder;
 if (!navigator.geolocation) {
   console.log("No geoloc");
 }
@@ -17,6 +17,7 @@ window.current_points = [];
 console.log("fasdfasd");
 
 inicializa = function() {
+   geocoder = new google.maps.Geocoder();
   return console.log("fasdfasdfasdasf");
 };
 
@@ -37,9 +38,20 @@ gm_init = function() {
   mapa_desc = $('#mapa');
   gm_map_type = google.maps.MapTypeId.ROADMAP;
   map_options = {
+
     center: gm_center,
     zoom: 14,
-    mapTypeId: gm_map_type
+     maxZoom: 14,
+      minZoom: 13,
+    mapTypeId: gm_map_type,panControl: true,
+  panControlOptions: {
+  position: google.maps.ControlPosition.RIGHT_TOP
+},
+zoomControl: false,
+zoomControlOptions: {
+  style: google.maps.ZoomControlStyle.LARGE,
+  position: google.maps.ControlPosition.RIGHT_TOP
+}
   };
   return new google.maps.Map(document.getElementById("mapa"), map_options);
 };
@@ -153,6 +165,63 @@ moviendo_mapa = function() {
     });
   }
 };
+localizar = function() {
+        if(navigator.geolocation) {
+navigator.geolocation.getCurrentPosition(geoSuccess, geoError);
+        } else {
+            alert("Geolocation is not supported by this browser.");
+        }
+   
+};
+function geoSuccess(position) {
+    var lat = position.coords.latitude;
+    var lng = position.coords.longitude;
+    var centro_pos, distancia_centro;
+  console.log( "buscando");
+  create_cards();
+    clean_map(window.map);
+    window.center_marker.setMap(null);
+    window.center_marker = null;
+    gm_center = new google.maps.LatLng(lat, lng);
+     window.map.panTo(gm_center);
+
+     load_from_position(window.map,lat, lng);
+    load_from_position(window.map, lat, lng);
+    return window.center_marker = new google.maps.Marker({
+      position: gm_center,
+      map: window.map,
+
+      icon: {
+        url: 'marker.png'
+      }
+    });
+   // alert("lat:" + lat + " lng:" + lng);
+}
+function geoError() {
+    //alert("Geocoder failed.");
+}
+buscar_mapa = function() {
+  var centro_pos;
+  console.log( "buscando");
+  create_cards();
+    clean_map(window.map);
+    window.center_marker.setMap(null);
+    window.center_marker = null;
+    gm_center = new google.maps.LatLng(19.41498, -99.177446);
+     window.map.panTo(gm_center);
+
+     load_from_position(window.map,19.41498, -99.177446);
+    load_from_position(window.map, 19.41498, -99.177446);
+    return window.center_marker = new google.maps.Marker({
+      position: gm_center,
+      map: window.map,
+
+      icon: {
+        url: 'marker.png'
+      }
+    });
+  
+};
 
 clean_map = function(map) {
   console.log("borrando");
@@ -202,3 +271,44 @@ get_current_location = function() {
   };
   return $("#boton_todos").click(mostrar_todos);
 };
+
+get_Address=function () {
+
+   console.log("direccion");
+   var sAddress = document.getElementById("lugar").value;
+ console.log(sAddress);
+  geocoder.geocode( { 'address': sAddress}, function(results, status) { 
+
+if (status == google.maps.GeocoderStatus.OK) 
+  {
+  
+   map.setCenter(results[0].geometry.location);
+   // var marker = new google.maps.Marker({  map: map,  position: results[0].geometry.location });
+    console.log(results[0].geometry.location.A);
+    console.log(results[0].geometry.location.k);
+    var centro_pos;
+  console.log( "buscando");
+  create_cards();
+    clean_map(window.map);
+    window.center_marker.setMap(null);
+    window.center_marker = null;
+    gm_center = new google.maps.LatLng(results[0].geometry.location.k, results[0].geometry.location.A);
+     window.map.panTo(gm_center);
+
+     load_from_position(window.map,results[0].geometry.location.k, results[0].geometry.location.A);
+    load_from_position(window.map, results[0].geometry.location.k, results[0].geometry.location.A);
+    return window.center_marker = new google.maps.Marker({
+      position: gm_center,
+      map: window.map,
+
+      icon: {
+        url: 'marker.png'
+      }
+    });
+  }
+
+   else{  alert("No encontramos el lugar que buscas :/ " + status);}
+  });
+
+}
+ 
