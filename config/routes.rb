@@ -1,5 +1,7 @@
-Bootstrap::Application.routes.draw do
+Eventario::Application.routes.draw do
 
+  devise_for :admin_users, ActiveAdmin::Devise.config
+  ActiveAdmin.routes(self)
   devise_for :users
   resources :eventos
   get '/mapa'=> 'eventos#mapa', id: 'mapa'
