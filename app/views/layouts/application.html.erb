@@ -102,14 +102,15 @@
           <li><a href="#">Infomercado</a></li>
           <li><a href="http://muevete.herokuapp.com">Cuidate!</a></li>
           <li><a href="http://checate-aqui.herokuapp.com">Checate Aqui</a></li>
-           <li class="<%= 'active' if current_page?(new_evento_path) %>"><%= link_to "Registrar", new_evento_path %></li>
+
         </ul>
       </div>
 
        <div class="col-xs-6 col-md-3 column">
         <h4>Aceeso a Secretarías</h4>
         <ul class="nav">
-           <li class="<%= 'active' if current_page?(new_evento_path) %>"><%= link_to "Registrar Nuevo Evento", new_evento_path %></li>
+           <!--<li class="<%= 'active' if current_page?(new_evento_path) %>"><%= link_to "Registrar Nuevo Evento", new_evento_path %></li>-->
+              <li><a href="/admin">Registrar Nuevo Evento</a></li>
         </ul>
       </div>
   </div>
