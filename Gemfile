@@ -7,6 +7,8 @@ gem 'haml'
 gem 'haml-rails', :group => :development
 gem 'devise'
 gem 'jquery-ui-rails'
+
+gem "cancan"
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'

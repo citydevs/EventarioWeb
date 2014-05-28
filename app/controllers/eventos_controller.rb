@@ -1,5 +1,6 @@
 require "net/http"
 class EventosController < ApplicationController
+  load_and_authorize_resource
   before_action :set_evento, only: [:show, :edit, :update, :destroy]
 
   before_action :authenticate_user!, only: [:edit, :new]
