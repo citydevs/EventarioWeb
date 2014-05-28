@@ -20,17 +20,17 @@
     <%= f.text_field :nombre, class: "text_formulario" ,placeholder:"Yoga CDMX" %>
   </div>
   <div class="field">
- 
+
 
     <%= f.label :lugar, "Lugar donde sera el Evento *" , class: "label_formulario"%><br>
     <%= f.text_field :lugar , class: "text_formulario" ,placeholder:"Angel de la Independencia"  %>
   </div>
 
    <div class="field">
-      
-   
-    
-       
+
+
+
+
 
     <%= f.label :direccion ,"Direccion *", class: "label_formulario"%><br>
     <%= f.text_field :direccion , class: "text_formulario" ,placeholder:"Av Viaducto Rio de la Piedad y Rio Churubusco S/N, Granjas México, Iztacalco, 08400 Ciudad de México" %>
@@ -41,7 +41,7 @@
         <div class="field">
 
 <label for="from">From</label>
-<input type="text" id="from" name="from">
+<input type="text" id="formaforma" name="from">
 <label for="to">to</label>
 <input type="text" id="to" name="to">
 
@@ -59,7 +59,7 @@
    </div>
 
   <div class="col-xs-12">
-           
+
             <div class="col-xs-6">
 
 
@@ -68,7 +68,7 @@
                 <%= f.label :hora_inicio , class: "label_formulario"%><br>
                 <%= f.time_select :hora_inicio, :default=> {:hour=>"0",:minute=>"0"} %>
               </div>
-              
+
             </div>
 
             <div class="col-xs-6">
@@ -76,12 +76,12 @@
                 <%= f.label :hora_fin , class: "label_formulario"%><br>
                 <%= f.time_select :hora_fin %>
               </div>
-            
+
             </div>
-           
+
    </div>
-  
-  
+
+
 
   <div class="field">
      <%= f.label :imagen, "Imagen" , class: "label_formulario"%><br>
@@ -96,14 +96,14 @@
   <div class="col-xs-4">
    <div class="field">
     <%= f.label :categoria, class: "label_formulario" %><br>
-   
+
      <%= f.select :categoria, options_for_select([ "Deportivo", "Cine", "Exposiciones", "Infantile","Música","Cultura","Teatro","Aprendizaje" ], "Deportivo") %>
     </div>
   </div>
   <div class="col-xs-4">
   <div class="field">
     <%= f.label :Entrada_Libre, class: "label_formulario" %><br>
-   
+
      <%= f.select :categoria, options_for_select([ "Si", "No"], "Si") %>
     <%= f.label :precio , class: "label_formulario"%><br>
     <%= f.text_field :precio, class: "text_formulario" ,placeholder:"Entrada Libre"  %>
@@ -117,7 +117,7 @@
   </div>
   </div>
 
- 
+
 
  <div class="col-xs-12">
   <div class="col-xs-6">
@@ -144,7 +144,7 @@
   </div>
   <div class="col-xs-6">
   <div class="field">
-   
+
     <%= f.hidden_field :longitud , :id=>'lng' %>
   </div>
   </div>
@@ -158,22 +158,23 @@
    </div>
  <!-- <div class="col-md-3 box1">
    <div class="row">
-      
+
       <pre>
         <IMG align="middle" SRC="/codigo.png" WIDTH=98% HEIGHT=210 >
       </pre>
       <pre>
           <IMG align="middle" SRC="/eventario.png" WIDTH=98% HEIGHT=210 >
-      </pre>   
+      </pre>
       <pre>
           <IMG align="middle" SRC="/labplc.jpg" WIDTH=98% HEIGHT=210 >
-      </pre>      
+      </pre>
       </div>
    </div>-->
 
     </div>
 <% end %>
-<%= javascript_include_tag "jquery"%>
-<%= javascript_include_tag "jquery.ui.all"%>
+<%= javascript_include_tag "datepick.plugin" %>
+<%= javascript_include_tag "datepick"%>
+<%= javascript_include_tag "forma" %>
 
 

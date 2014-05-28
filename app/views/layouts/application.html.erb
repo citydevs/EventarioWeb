@@ -13,6 +13,7 @@
   <script type="text/javascript" src="http://maps.google.com/maps/api/js?sensor=false&libraries=geometry">         </script>
   <%= javascript_include_tag "jquery","jquery_ujs"%>
   <%= stylesheet_link_tag    "application" %>
+  <%= stylesheet_link_tag "datepick" %>
   <%= csrf_meta_tags %>
 
   <!-- HTML5 shim and Respond.js IE8 support of HTML5 elements and media queries -->
@@ -41,11 +42,11 @@
       <ul class="nav navbar-nav navbar-left">
         <li ><%= link_to "Inicio", root_path %></li>
         <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "Buscar Eventos", mapa_path %></li>
-        
-        
+
+
 
         <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li>
-        
+
       </ul>
 <% if user_signed_in? %>
             Logged in as <strong><%= current_user.email %></strong>.
@@ -72,7 +73,7 @@
           <li><%= link_to "Términos de uso", privacy_path %></li>
           <li><a href="http://codigo.labplc.mx/">Código CDMX</a></li>
           <li><a href="http://labplc.mx/">LabPLC</a></li>
-         
+
         </ul>
       </div>
     <div class="col-xs-6 col-md-3 column">
@@ -81,7 +82,7 @@
 
            <li><a href="https://twitter.com/EventarioCDMX">Twitter</a></li>
           <li><a href="https://www.facebook.com/EventarioCDMX">Facebook</a></li>
-         
+
         </ul>
       </div>
    <!-- <div class="col-xs-6 col-md-3 column">
