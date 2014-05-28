@@ -3,9 +3,11 @@ class Ability
 
   def initialize(user)
     user ||= User.new
-    if user.email == 'jjuanchow@gmail.com'
+    if user.admin?
         can :manage, Evento
+        can :manage, User
     else
+        alias_action :index, :show, :mapa, :to => :read
         can :read, Evento
     end
     # Define abilities for the passed in user here. For example:
