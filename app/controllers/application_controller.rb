@@ -6,4 +6,12 @@ class ApplicationController < ActionController::Base
   rescue_from CanCan::AccessDenied do |ex|
     redirect_to root_url, :alert => ex.message
   end
+
+  def verified_request?
+    if request.content_type == "application/json"
+      true
+    else
+      super()
+    end
+end
 end
