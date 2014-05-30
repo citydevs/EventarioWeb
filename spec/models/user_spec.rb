@@ -20,7 +20,17 @@
 require 'spec_helper'
 
 describe User do
-  subject { user }
+
+  before do
+    @user = User.new(email: "user@example.com", password: "pa5sword", password_confirmation: "pa5sword")
+  end
+
+  subject { @user }
 
   it { should respond_to(:admin)}
+  it { should respond_to(:email) }
+  it { should respond_to(:password)}
+  it { should respond_to(:password_confirmation)}
+
+
 end
