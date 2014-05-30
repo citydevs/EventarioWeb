@@ -1,9 +1,10 @@
 require "net/http"
 class EventosController < ApplicationController
   before_action :set_evento, only: [:show, :edit, :update, :destroy]
-
+  load_and_authorize_resource
+  skip_authorize_resource :only => :create
   before_action :authenticate_user!, only: [:edit, :new]
-  before_action :verified_request?
+
 
   # GET /eventos
   # GET /eventos.json
@@ -53,6 +54,7 @@ class EventosController < ApplicationController
         format.html { render action: 'new' }
         format.json do
           puts @evento.errors
+          puts "LALALAL"
           render json: @evento.errors, status: :unprocessable_entity
         end
       end
