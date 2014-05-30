@@ -193,7 +193,7 @@ $args = array("evento" => array(
                             "latitud" => $objeto["latitud"],
                             "longitud" => $objeto["longitud"],
                             "pagina" => $objeto["pagina"],
-                            "contato" => $objeto["contacto"],
+                            "contacto" => $objeto["contacto"],
                             "precio" => $objeto["precio"]
                         ));
 $args = json_encode($args);
