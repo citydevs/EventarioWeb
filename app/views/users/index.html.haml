@@ -5,7 +5,7 @@
     %tr
       %th Email
       %th Admin
-      %th
+      %th Ver
       %th
       %th
 
@@ -13,10 +13,10 @@
     %tr
       %td= user.email
       %td= user.admin?
-      %td= link_to 'Show', user
-      %td= link_to 'Edit', edit_user_path(user)
-      %td= link_to 'Destroy', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
+      %td= link_to 'Ver', user
+      %td= link_to 'Editar', edit_user_path(user)
+      %td= link_to 'Eliminar', user, :method => :delete, :data => { :confirm => 'Are you sure?' }
 
 %br
 
-= link_to 'New User', new_user_path
+//= link_to 'New User', new_user_path

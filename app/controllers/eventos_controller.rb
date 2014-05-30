@@ -46,10 +46,10 @@ class EventosController < ApplicationController
 
     respond_to do |format|
       if @evento.save
-        format.html { redirect_to @evento, notice: 'Evento was successfully created.' }
-        format.json { render action: 'show', status: :created, location: @evento }
+        format.html { redirect_to @evento, notice: 'Evento Creado Correctamente.' }
+        format.json { render action: 'Ver', status: :created, location: @evento }
       else
-        format.html { render action: 'new' }
+        format.html { render action: 'Nuevo' }
         format.json { render json: @evento.errors, status: :unprocessable_entity }
       end
     end
@@ -60,10 +60,10 @@ class EventosController < ApplicationController
   def update
     respond_to do |format|
       if @evento.update(evento_params)
-        format.html { redirect_to @evento, notice: 'Evento was successfully updated.' }
+        format.html { redirect_to @evento, notice: 'Evento Actualizado Correctamente.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'edit' }
+        format.html { render action: 'Editar' }
         format.json { render json: @evento.errors, status: :unprocessable_entity }
       end
     end
