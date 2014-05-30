@@ -1,8 +1,9 @@
 require "net/http"
 class EventosController < ApplicationController
   before_action :set_evento, only: [:show, :edit, :update, :destroy]
-  load_and_authorize_resource
+
   before_action :authenticate_user!, only: [:edit, :new]
+  before_action :verified_request?
 
   # GET /eventos
   # GET /eventos.json
@@ -46,11 +47,14 @@ class EventosController < ApplicationController
 
     respond_to do |format|
       if @evento.save
-        format.html { redirect_to @evento, notice: 'Evento Creado Correctamente.' }
-        format.json { render action: 'Ver', status: :created, location: @evento }
+        format.html { redirect_to @evento, notice: 'Evento was successfully created.' }
+        format.json { render action: 'show', status: :created, location: @evento }
       else
-        format.html { render action: 'Nuevo' }
-        format.json { render json: @evento.errors, status: :unprocessable_entity }
+        format.html { render action: 'new' }
+        format.json do
+          puts @evento.errors
+          render json: @evento.errors, status: :unprocessable_entity
+        end
       end
     end
   end
@@ -60,10 +64,10 @@ class EventosController < ApplicationController
   def update
     respond_to do |format|
       if @evento.update(evento_params)
-        format.html { redirect_to @evento, notice: 'Evento Actualizado Correctamente.' }
+        format.html { redirect_to @evento, notice: 'Evento was successfully updated.' }
         format.json { head :no_content }
       else
-        format.html { render action: 'Editar' }
+        format.html { render action: 'edit' }
         format.json { render json: @evento.errors, status: :unprocessable_entity }
       end
     end
