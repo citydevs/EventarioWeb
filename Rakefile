@@ -3,4 +3,4 @@
 
 require File.expand_path('../config/application', __FILE__)
 
-Bootstrap::Application.load_tasks
+Eventario::Application.load_tasks

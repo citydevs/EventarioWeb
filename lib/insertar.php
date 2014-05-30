@@ -1,6 +1,6 @@
 <?php
      	date_default_timezone_set('America/Mexico_City');
-        
+
         $fecha_peticion= date("Y-m-d");
         $mes= date("m");
         if ($mes =="01") {
@@ -23,8 +23,8 @@
         	$mes ="9";
         }
         $fecha='20'.date("y")."-".$mes."-".date("d").'';
-        
-        
+
+
  //http://www.timeoutmexico.mx/df/search?language=es_419&order=date&page=1&page_size=50&nodes%5B1%5D=637&date=2014-03-13&_section_search=&section=
 $url= "http://www.mexicoescultura.com/webservices/mxcult-calendario-fec.php?fecha_i=".$fecha."&lan=mx&tipo=json&cveapp=a309f9d87420e807ae798bf8a93649b2&ciu=1&fecha_f=".$fecha;
 
@@ -99,7 +99,7 @@ else{
 
 }
 
-  
+
 $objeto["fuente"]="CONACULTA";
 
 
@@ -126,7 +126,7 @@ if (($response_xml_data = file_get_contents($url3))===false){
        }
    } else {
 
-    
+
    $objeto["pagina"]="".$data->actividad->URL_ACT."";
    $objeto["contacto"]="".$data->actividad->INFORMES_ACT."";
    $objeto["precio"]="No disponible";
@@ -138,7 +138,7 @@ if (($response_xml_data = file_get_contents($url3))===false){
 
           if ($key!="" || $key!=$null) {
             # code...
-          
+
         $mystring = $key;
         $findme   = '$';
         $findme2   = 'Entrada libre';
@@ -150,41 +150,62 @@ if (($response_xml_data = file_get_contents($url3))===false){
         $pos4 = strpos($mystring, $findme4);
         if ($pos !== false || $pos2!==false || $pos3!==false || $pos4!==false) {
              $objeto["precio"]= $key;
-                
-        } 
+
+        }
 
 
         }
         }
 
 
-     
+
      // echo "\nadsdasd".$data->actividad->FECHA_HORA_ACT;
    }
 }
 
 if ($objeto["pagina"]=="null" ) {
   $objeto["pagina"]="No disponible";
- 
+
 }
 /*if ($objeto["precio"]=="null" ) {
   $objeto["precio"]="No disponible";
- 
+
 }*/
 if ($objeto["contacto"]=="null" ) {
   $objeto["contacto"]="No disponible";
- 
+
 }
 
 $ch = curl_init();
-$query="evento[nombre]=". $objeto["nombre"]."&evento[lugar]=".$objeto["lugar"]."&evento[direccion]=".$objeto["direccion"]."&evento[imagen]=".$objeto["imagen"]."&evento[fecha_inicio]=".$objeto["fecha_inicio"]."&evento[fecha_fin]=".$objeto["fecha_fin"]."&evento[hora_inicio]=".$objeto["hora_inicio"]."&evento[hora_fin]=".$objeto["hora_fin"]."&evento[descripcion]=".html_entity_decode($objeto["descripcion"])."&evento[categoria]=".$objeto["categoria"]."&evento[fuente]=".$objeto["fuente"]."&evento[latitud]=".$objeto["latitud"]."&evento[longitud]=".$objeto["longitud"]."&evento[pagina]=".$objeto["pagina"]."&evento[contacto]=".$objeto["contacto"]."&evento[precio]=".$objeto["precio"];
-echo $objeto["descripcion"] ."<pre></pre>";
+
+$args = array("evento" => array(
+                            "nombre" => $objeto["nombre"],
+                            "lugar" => $objeto["lugar"],
+                            "direccion" => $objeto["direccion"],
+                            "imagen" => $objeto["imagen"],
+                            "fecha_inicio" => $objeto["fecha_inicio"],
+                            "fecha_fin" => $objeto["fecha_fin"],
+                            "hora_inicio" => $objeto["hora_inicio"],
+                            "hora_fin" => $objeto["hora_fin"],
+                            "descripcion" => html_entity_decode($objeto["descripcion"]),
+                            "categoria" => $objeto["categoria"],
+                            "fuente" => $objeto["fuente"],
+                            "latitud" => $objeto["latitud"],
+                            "longitud" => $objeto["longitud"],
+                            "pagina" => $objeto["pagina"],
+                            "contato" => $objeto["contacto"],
+                            "precio" => $objeto["precio"]
+                        ));
+$args = json_encode($args);
+$header = array("Content-type: application/json");
 curl_setopt($ch, CURLOPT_URL,"http://localhost:3000/eventos.json");
+curl_setopt($ch, CURLOPT_HTTPHEADER, $header);
 curl_setopt($ch, CURLOPT_POST, 1);
-curl_setopt($ch, CURLOPT_POSTFIELDS,$query);
+curl_setopt($ch, CURLOPT_POSTFIELDS,$args);
+echo $args;
 
 // in real life you should use something like:
-// curl_setopt($ch, CURLOPT_POSTFIELDS, 
+// curl_setopt($ch, CURLOPT_POSTFIELDS,
 //          http_build_query(array('postvar1' => 'value1')));
 
 // receive server response ...
@@ -195,6 +216,8 @@ $server_output = curl_exec ($ch);
 curl_close ($ch);
 
 // further processing ....
+echo $ch;
+echo $server_output;
 if ($server_output == "OK") { echo "si"; } else {  echo "no"; }
 array_push($eventos, $objeto);
 

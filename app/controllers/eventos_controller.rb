@@ -3,6 +3,7 @@ class EventosController < ApplicationController
   before_action :set_evento, only: [:show, :edit, :update, :destroy]
 
   before_action :authenticate_user!, only: [:edit, :new]
+  before_action :verified_request?
 
   # GET /eventos
   # GET /eventos.json
@@ -50,7 +51,10 @@ class EventosController < ApplicationController
         format.json { render action: 'show', status: :created, location: @evento }
       else
         format.html { render action: 'new' }
-        format.json { render json: @evento.errors, status: :unprocessable_entity }
+        format.json do
+          puts @evento.errors
+          render json: @evento.errors, status: :unprocessable_entity
+        end
       end
     end
   end

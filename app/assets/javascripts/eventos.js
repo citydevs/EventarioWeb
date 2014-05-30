@@ -9,7 +9,7 @@ var myOptions = {
 
 }
 var map = new google.maps.Map(document.getElementById("map_canvas"), myOptions);
- 
+
 marker = new google.maps.Marker({
         position: myLatlng,
         map: map,
@@ -44,5 +44,5 @@ google.maps.event.addListener(marker,'dragend',function(event) {
   $(document).ready(function(){
    initialize()
 
-  
+
  })

@@ -1,8 +1,9 @@
-Bootstrap::Application.routes.draw do
+Eventario::Application.routes.draw do
 
   devise_for :users
   resources :eventos
-  get '/mapa'=> 'eventos#mapa', id: 'mapa'
+  resources :users
+  get '/mapa'=> 'eventos#mapa', as: 'mapa'
   get '/about'    => 'high_voltage/pages#show', id: 'about'
   get '/contact'  => 'high_voltage/pages#show', id: 'contact'
   get '/privacy'  => 'high_voltage/pages#show', id: 'privacy'

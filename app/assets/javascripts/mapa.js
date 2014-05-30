@@ -250,8 +250,11 @@ card = function(point) {
   var direccion_centro, div_card_centro, hacer_cita, horario_centro, nombre_centro, telefonos_centro;
   nombre_centro = "<h3  class='eventos_textos'><a href='"+point.url+"'><font color='#FFFFFF'>" + point.nombre + "</font></a></h3>";
   direccion_centro = "<p class='eventos_textos'>" +'<img src="donde.png" width="20" height="23" />'+ point.lugar + "</p>";
+
+  var f1 = point.hora_inicio.substring(11)
+  var f2 = point.hora_fin.substring(11)
   horario_centro = "<p class='eventos_textos'>" + point.direccion + "</p>";
-  telefonos_centro = "<p class='eventos_textos'>" +'<img src="hora.png" width="20" height="23" />'+ point.hora + "</p>";
+  telefonos_centro = "<p class='eventos_textos'>" +'<img src="hora.png" width="20" height="23" />'+ f1 +"-"+f2+ "</p>";
   //hacer_cita = "<span class='card_cita'><a href='places/" + point.lugar + "'>Agenda una cita</a></span>";
   return div_card_centro = "<div class='col-md-12 box1'>"+"<div class='card'>" + nombre_centro + direccion_centro + horario_centro + telefonos_centro  + "</div></div><pre class='space'></pre>";
 };

@@ -7,7 +7,7 @@
 #  lugar        :string(255)
 #  hora_inicio  :time
 #  hora_fin     :time
-#  hora         :string(255)
+#  imagen       :string(255)
 #  descripcion  :text
 #  precio       :string(255)
 #  direccion    :string(255)
@@ -21,6 +21,7 @@
 #  longitud     :float
 #  created_at   :datetime
 #  updated_at   :datetime
+#  slug         :string(255)
 #
 
 class Evento < ActiveRecord::Base

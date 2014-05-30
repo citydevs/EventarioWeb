@@ -5,7 +5,7 @@
         <div class="col-xs-1">
         </div>
               <div class="col-xs-10 box1">
-             
+
                  <div class="col-xs-0.5">
                  </div>
 
@@ -20,7 +20,7 @@
                        </p>
 
                     <p>
-                      
+
                       <img src="/donde.png" width="20" height="23" />
                       <span class='eventos_textos'>  <%= @evento.lugar %></span>
                     </p>
@@ -33,12 +33,12 @@
                     <span class='eventos_textos'>   <%= @evento.fecha_inicio %>  - <%= @evento.fecha_fin %></span>
                     </p>
 
-                    
+
 
                     <p>
-                      
+
                       <img src="/hora.png" width="20" height="23" />
-                     <span class='eventos_textos'>  <%= @evento.hora_inicio %> a 
+                     <span class='eventos_textos'>  <%= @evento.hora_inicio %> a
                       <%= @evento.hora_fin %></span>
                     </p>
 
@@ -50,7 +50,7 @@
                       <strong>Fecha fin:</strong>
                       <%= @evento.fecha_fin %>
                     </p>-->
-                    
+
 
                     <p>
                       <strong>Descripcion:</strong>
@@ -65,21 +65,21 @@
                       </div>
                       <div class="col-xs-6">
                         <p>
-                      
+
                        <p class="text-center">
                         <img src="<%= @evento.imagen %>" class="img-responsive center-block ">
                       </p>
-                   
+
                     </p>
                       </div>
-                    
-                    
+
+
                     <p>
                       <strong>Fuente:</strong>
                       <%= @evento.fuente %>
                     </p>
 
-                    
+
                     <p>
                       <strong>Categoria:</strong>
                       <%= @evento.categoria %>
@@ -98,7 +98,7 @@
 
                     <p>
                       <strong>Latitud:</strong>
-                      <%= @evento.latitud %>
+                     <span id="lat"> <%= @evento.latitud %></span>
                     </p>
 
                     <p>
@@ -107,15 +107,16 @@
                     </p>
                      <p class="text-center">
                        <div id="map_canvas" style="width:100%;height:400px;"></div>
-                        
+
                       </p>
 
                      </div>
                 </div>
-            
+
             </div>
 </div>
 </div>
   <pre class='space'></pre>
 <!--<%= link_to 'Edit', edit_evento_path(@evento) %> |
 <%= link_to 'Back', eventos_path %>-->
+<%= javascript_include_tag "showEventos" %>

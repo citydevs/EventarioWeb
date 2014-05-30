@@ -1,7 +1,7 @@
 module ApplicationHelper
 
   def site_name
-    "Project Name"
+    "Eventario"
   end
 
   def site_url

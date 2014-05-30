@@ -1,19 +1,19 @@
-- provide(:titulo, 'Mapa')
+- provide(:title, 'Mapa')
 
 
 
 #row
 
   #box.col-sm-12
-    %h2.eventos_textos Encuentra tus eventos 
+    %h2.eventos_textos Encuentra tus eventos
     .col-sm-3
     .col-sm-12
-      %h4.eventos_textos Ingresa una dirección: 
+      %h4.eventos_textos Ingresa una dirección:
       %input{:type=>"text",:required => true,:id =>"lugar", :class=>"barra"}
       %input{:onclick => "get_Address()", :type => "button", :value =>"Buscar"}
       %input{:onclick => "localizar()", :type => "button", :value =>"Localizarme"}
 
-    %pre#espacio  
+    %pre#espacio
   .container-fluid.explorar
     #contflu.row-fluid.contenedor
       #mapa.mapa.flexible.col-sm-8
