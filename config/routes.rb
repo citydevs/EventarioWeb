@@ -9,6 +9,7 @@ Eventario::Application.routes.draw do
   get '/privacy'  => 'high_voltage/pages#show', id: 'privacy'
   get '/terms'    => 'high_voltage/pages#show', id: 'terms'
   get '/hola'    => 'high_voltage/pages#show', id: 'hola'
+  get '/aplicacion'    => 'high_voltage/pages#show', id: 'aplicacion'
   get '/eventos_new'    => 'high_voltage/eventos#show', id: 'new'
   root :to => 'high_voltage/pages#show', id: 'home'
 

@@ -126,7 +126,7 @@ set_marker_map = function(map) {
 
 create_marker = function(point, map) {
   var content_string, marker;
-  content_string = '<div class="centro_info">' + '<div class="centro_encabezado">' + '<h3>' + point.nombre + '</h3>' + '</div>' + '<div class="centro_content"' + '<h4>Lugar:</h4>' + '<p><img src="donde.png" width="20" height="23" />' + point.lugar + '</p>' + '<h4> Dirección:</h4>' + '<p> <img src="donde.png" width="20" height="23" />' + point.direccion + '</p><p> <img src="hora.png" width="20" height="23" />'+ point.hora+'</p>' + '</div>' + '</div>';
+  content_string = '<div class="centro_info">' + '<div class="centro_encabezado">' + '<h4><font color="red">' + point.nombre + '</font></h4>' + '</div>' + '<div class="centro_content"' + '<p><img src="donde.png" width="20" height="23" />' + point.lugar + ' <img src="hora.png" width="20" height="23" />'+ point.hora_inicio +  '<p> <img src="donde.png" width="20" height="23" />' + point.direccion + '</p>'+'</p>' + '</div>' + '</div>';
   marker = new google.maps.Marker({
     position: new google.maps.LatLng(point.latitud, point.longitud),
     animation: google.maps.Animation.DROP,
@@ -247,16 +247,26 @@ create_cards = function() {
 };
 
 card = function(point) {
-  var direccion_centro, div_card_centro, hacer_cita, horario_centro, nombre_centro, telefonos_centro;
-  nombre_centro = "<h3  class='eventos_textos'><a href='"+point.url+"'><font color='#FFFFFF'>" + point.nombre + "</font></a></h3>";
-  direccion_centro = "<p class='eventos_textos'>" +'<img src="donde.png" width="20" height="23" />'+ point.lugar + "</p>";
+  var direccion_centro,fecha, div_card_centro, hacer_cita, horario_centro, nombre_centro, telefonos_centro;
+  //fecha = "<div class='col-md-12'><div class='col-md-1'><img src='hora.png' width='20' height='23' /></div><div class='col-md-6'>" + point.fecha_inicio +"-"+point.fecha_fin + "</div><div class='col-md-4 boxCategoria'>"+point.categoria+"</div></div>";
+  var str1=point.fecha_inicio;
+  var r1=str1.split("-");
+  var nf1=r1[2]+"/"+r1[1];
+
+  var str2=point.fecha_fin;
+  var r2=str2.split("-");
+  var nf2=r2[2]+"/"+r2[1];
+  fecha = '<p></p><img src="hora.png" width="20" height="23" />'+ nf1 +"-"+nf2+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+point.categoria;
+  
+  nombre_centro = "<h4  class='eventos_textos'><a href='"+point.url+"'><font color='#000'>" + point.nombre + "</font></a></h4>";
+  direccion_centro = "<p class='lugarTarget'>" +'<img src="donde.png" width="20" height="23" />'+ point.lugar + "</p>";
 
   var f1 = point.hora_inicio.substring(11)
   var f2 = point.hora_fin.substring(11)
-  horario_centro = "<p class='eventos_textos'>" + point.direccion + "</p>";
-  telefonos_centro = "<p class='eventos_textos'>" +'<img src="hora.png" width="20" height="23" />'+ f1 +"-"+f2+ "</p>";
+  horario_centro = "<p class='direccionTarget'>" + point.direccion + "</p>";
+  telefonos_centro = "<p class='horaTarget'>" +'<img src="hora.png" width="20" height="23" />'+ f1 +"-"+f2+ "</p>";
   //hacer_cita = "<span class='card_cita'><a href='places/" + point.lugar + "'>Agenda una cita</a></span>";
-  return div_card_centro = "<div class='col-md-12 box1'>"+"<div class='card'>" + nombre_centro + direccion_centro + horario_centro + telefonos_centro  + "</div></div><pre class='space'></pre>";
+  return div_card_centro = "<div class='col-md-12 box1'>"+"<div class='card '>" + fecha +nombre_centro + direccion_centro + horario_centro + telefonos_centro  + "<div class='space'></div></div></div>";
 };
 
 submit_ajax_form = function() {

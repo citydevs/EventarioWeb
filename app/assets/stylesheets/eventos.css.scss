@@ -4,15 +4,16 @@
 #mapa{
 
   height:600px;
-      //width: 100%;
+      width: 100%;
 }
 #tarjetas {
- max-height: 50%;
+ max-height: 100%;
   overflow-y:scroll; 
   height: inherit;
   height: 600px;
+  position:absolute;
   //overflow: scroll;
-  //width: 300px;
+  width: 25%;
   //float: right;
   
 }
@@ -26,15 +27,28 @@
  }
  #barra{
  width: 1000px;
+ min-width:1000px;
  }
+#localizarme
+ {
+ color:blue;
+ width: 1000px;
+ min-width:1000px;
+ }
+ 
  .lugar{
-
+ min-width:1000px;
  width: 1000px;
  }
+ 
  .space{
 border-style:none;
-background-color: rgba(215, 44, 44, 0);
+max-height: 2px;
+height: 2px;
+width:100%;
+background-color: rgba(215, 44, 44, 1);
  }
+
  #espacio{
 border-style:none;
 background-color: rgba(215, 44, 44, 0);

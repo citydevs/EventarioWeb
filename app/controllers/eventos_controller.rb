@@ -87,7 +87,7 @@ class EventosController < ApplicationController
   def mapa
     if params.has_key?(:latitud) && params.has_key?(:longitud)
       puts params[:latitud]
-      response=Net::HTTP.get_response('codigo.labplc.mx','/~rockarloz/dejatecaer/dejatecaer.php?longitud='+params[:longitud]+'&latitud='+params[:latitud]+'&radio=2000')
+      response=Net::HTTP.get_response('codigo.labplc.mx','/~rockarloz/dejatecaer/dejatecaer.php?longitud='+params[:longitud]+'&latitud='+params[:latitud]+'&radio=2')
 
 
     else

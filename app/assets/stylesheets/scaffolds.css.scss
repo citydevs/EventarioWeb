@@ -1,5 +1,6 @@
 html,body {
   height:100%;
+   //
     background:center no-repeat fixed url('/assets/example/bg_suburb.jpg');
 }
 
@@ -8,16 +9,18 @@ html,body {
 }
 
 .navbar-trans {
-  background-color:#E40825;
+  background-color:#F31734;
     color:#fff;
+
 }
 
 .navbar-trans li>a:hover,.navbar-trans li>a:focus {
-  background-color:#FF213E;
+  background-color:#E40825;
 }
 
 .navbar-trans a{
     color:#fefefe;
+
 }
 
 .navbar-trans .form-control:focus {
