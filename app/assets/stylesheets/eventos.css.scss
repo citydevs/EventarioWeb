@@ -20,7 +20,7 @@
 
 .eventos_textos{
 
- color:#fff;
+ color:#000;
  //font-size:70px;
 
 
@@ -29,6 +29,7 @@
  width: 1000px;
  min-width:1000px;
  }
+
 #localizarme
  {
  color:blue;
@@ -57,3 +58,29 @@ background-color: rgba(215, 44, 44, 0);
  #box{
  background-color:#F31734;
  }
+ .titulo{
+ color:white;
+ font-family: "NIISans-Bold"; 
+ src: url("/fuentes/NIISans-Bold.ttf") format ("ttf");
+ font-size:25px;
+ }
+
+input.localizarme{
+    background: #fff url('/flecha.png') no-repeat top left;
+    padding-left: 36px;
+    height: 36px;
+    color: white;
+    width: 23px;
+}
+input.buscar{
+    background: #fff url('/search.png') no-repeat top left;
+    padding-left: 36px;
+    height: 36px;
+    color: white;
+    width: 23px;
+}
+input.barra{
+    width:50%;
+   // padding-left: 36px;
+    height: 36px;
+}

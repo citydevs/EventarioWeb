@@ -126,7 +126,11 @@ set_marker_map = function(map) {
 
 create_marker = function(point, map) {
   var content_string, marker;
-  content_string = '<div class="centro_info">' + '<div class="centro_encabezado">' + '<h4><font color="red">' + point.nombre + '</font></h4>' + '</div>' + '<div class="centro_content"' + '<p><img src="donde.png" width="20" height="23" />' + point.lugar + ' <img src="hora.png" width="20" height="23" />'+ point.hora_inicio +  '<p> <img src="donde.png" width="20" height="23" />' + point.direccion + '</p>'+'</p>' + '</div>' + '</div>';
+   var f1 = point.hora_inicio.substring(11)
+  f1=f1.replace("Z","");
+  var f2 = point.hora_fin.substring(11)
+  f2=f2.replace("Z","");
+  content_string = '<div class="centro_info">' + '<div class="centro_encabezado">' + '<h4><font color="red">' + point.nombre + '</font></h4>' + '</div>' + '<div class="centro_content"' + '<p><img src="donde.png" width="20" height="23" />' + point.lugar + ' <img src="hora.png" width="20" height="23" />'+ f1+"-"+f2 +  '<p> <img src="donde.png" width="20" height="23" />' + point.direccion + '</p>'+'</p>' + '</div>' + '</div>';
   marker = new google.maps.Marker({
     position: new google.maps.LatLng(point.latitud, point.longitud),
     animation: google.maps.Animation.DROP,
@@ -256,15 +260,17 @@ card = function(point) {
   var str2=point.fecha_fin;
   var r2=str2.split("-");
   var nf2=r2[2]+"/"+r2[1];
-  fecha = '<p></p><img src="hora.png" width="20" height="23" />'+ nf1 +"-"+nf2+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+point.categoria;
+  fecha = '<p></p><img src="fecha.png" width="23" height="23" />'+ nf1 +"-"+nf2+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+point.categoria;
   
   nombre_centro = "<h4  class='eventos_textos'><a href='"+point.url+"'><font color='#000'>" + point.nombre + "</font></a></h4>";
-  direccion_centro = "<p class='lugarTarget'>" +'<img src="donde.png" width="20" height="23" />'+ point.lugar + "</p>";
+  direccion_centro = "<p class='lugarTarget'>" +'<img src="donde.png" width="23" height="23" />'+ point.lugar + "</p>";
 
   var f1 = point.hora_inicio.substring(11)
+  f1=f1.replace("Z","");
   var f2 = point.hora_fin.substring(11)
+  f2=f2.replace("Z","");
   horario_centro = "<p class='direccionTarget'>" + point.direccion + "</p>";
-  telefonos_centro = "<p class='horaTarget'>" +'<img src="hora.png" width="20" height="23" />'+ f1 +"-"+f2+ "</p>";
+  telefonos_centro = "<p class='horaTarget'>" +'<img src="hora.png" width="23" height="23" />'+ f1 +"-"+f2+ "</p>";
   //hacer_cita = "<span class='card_cita'><a href='places/" + point.lugar + "'>Agenda una cita</a></span>";
   return div_card_centro = "<div class='col-md-12 box1'>"+"<div class='card '>" + fecha +nombre_centro + direccion_centro + horario_centro + telefonos_centro  + "<div class='space'></div></div></div>";
 };
@@ -324,4 +330,39 @@ if (status == google.maps.GeocoderStatus.OK)
   });
 
 }
+
+completar=function () {
+
+   console.log("auto");
+    var availableTags = [
+      "ActionScript",
+      "AppleScript",
+      "Asp",
+      "BASIC",
+      "C",
+      "C++",
+      "Clojure",
+      "COBOL",
+      "ColdFusion",
+      "Erlang",
+      "Fortran",
+      "Groovy",
+      "Haskell",
+      "Java",
+      "JavaScript",
+      "Lisp",
+      "Perl",
+      "PHP",
+      "Python",
+      "Ruby",
+      "Scala",
+      "Scheme"
+    ];
+    $( "#lugar" ).autocomplete({
+      source: availableTags
+    });
+
+}
+ 
+
  

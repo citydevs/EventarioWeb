@@ -1,13 +1,17 @@
-<% provide(:title, 'Mapa') %>
+<% provide(:title, 'Inicio') %>
 <div id="row">
   <div class="col-sm-12" id="box">
-    <h2 class="eventos_textos">Encuentra tus eventos</h2>
+    
     <div class="col-sm-3"></div>
     <div class="col-sm-12">
-      <h4 class="eventos_textos">Ingresa una dirección:</h4>
-      <input class="barra" id="lugar" required="<%= true %>" type="text"></input>
-      <input onclick="get_Address()" type="button" value="Buscar"></input>
-      <input class="localizarme" onclick="localizar()" type="button" value="Localizarme"></input>
+      <p class="titulo">Encuentra tus eventos</p>
+      <h4 class="eventos_textos"><font color='#fff'>Ingresa una dirección:</font></h4>
+
+      <input class="barra" id="lugar" required="<%= true %>" type="text" placeholder="Av.Juan Escutia #35, Col.Condesa"></input>
+      
+      <input class="buscar"  onclick="get_Address()" type="button" value="d"></input>
+
+      <input class="localizarme" onclick="localizar()" type="button" value="d"></input>
     </div>
     <pre id="espacio"></pre>
   </div>
