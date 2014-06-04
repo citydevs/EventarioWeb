@@ -4,14 +4,19 @@
     
     <div class="col-sm-3"></div>
     <div class="col-sm-12">
-      <p class="titulo">Encuentra tus eventos</p>
-      <h4 class="eventos_textos"><font color='#fff'>Ingresa una dirección:</font></h4>
+      <div class="col-sm-2"></div>
+        <div class="col-sm-7">
+              <p class="titulo">Encuentra tus eventos</p>
+              <h4 class="eventos_textos"><font color='#fff'>Ingresa una dirección:</font></h4>
 
-      <input class="barra" id="lugar" required="<%= true %>" type="text" placeholder="Av.Juan Escutia #35, Col.Condesa"></input>
-      
-      <input class="buscar"  onclick="get_Address()" type="button" value="d"></input>
+              <input class="barra" id="lugar" required="<%= true %>" type="text" placeholder="Av.Juan Escutia #35, Col.Condesa"></input>
+              
 
-      <input class="localizarme" onclick="localizar()" type="button" value="d"></input>
+              <input class="buscar"  onclick="get_Address()" type="button" value="d"></input>
+
+              <input class="localizarme" onclick="localizar()" type="button" value="d"></input>
+          </div>    
+      <div class="col-sm-3"></div>
     </div>
     <pre id="espacio"></pre>
   </div>
