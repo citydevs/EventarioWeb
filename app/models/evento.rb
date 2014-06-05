@@ -26,10 +26,12 @@
 
 class Evento < ActiveRecord::Base
   extend FriendlyId
+  
   friendly_id :nombre, use: :slugged
   reverse_geocoded_by :latitud, :longitud
   validates :nombre, presence: true, uniqueness: true
-
+  validates :lugar, presence: true
+  validates :direccion, presence: true
   attr_reader :distancia
 
   def distancia=(val)
