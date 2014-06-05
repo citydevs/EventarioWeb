@@ -13,5 +13,6 @@
 //= require jquery
 //= require jquery_ujs
 //= require jquery.ui.all
+//= requiere typeahead
 //= require bootstrap.min
 //= require_tree . 

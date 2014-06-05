@@ -1,6 +1,16 @@
 Eventario::Application.routes.draw do
 
-  resources :venues
+  
+
+  resources :venues do
+    collection do
+      post :import
+      get :autocomplete # <= add this line
+    end
+  end
+  
+
+
 
   devise_for :users
   resources :eventos

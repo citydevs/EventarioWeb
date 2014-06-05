@@ -6,7 +6,13 @@ class VenuesController < ApplicationController
   # GET /venues
   # GET /venues.json
   def index
-    @venues = Venue.all
+   ## @venues = Venue.all
+
+   if params[:query].present?
+      @venues = Venue.search(params[:query], page: params[:page])
+    else
+      @venues = Venue.all.page params[:page]
+    end
   end
 
   # GET /venues/1
@@ -30,7 +36,7 @@ class VenuesController < ApplicationController
 
     respond_to do |format|
       if @venue.save
-        format.html { redirect_to @venue, notice: 'Venue was successfully created.' }
+        format.html { redirect_to @venue, notice: 'Venue creado correctamente.' }
         format.json { render action: 'show', status: :created, location: @venue }
       else
         format.html { render action: 'new' }
@@ -44,7 +50,7 @@ class VenuesController < ApplicationController
   def update
     respond_to do |format|
       if @venue.update(venue_params)
-        format.html { redirect_to @venue, notice: 'Venue was successfully updated.' }
+        format.html { redirect_to @venue, notice: 'Venue actualizado correctamente.' }
         format.json { head :no_content }
       else
         format.html { render action: 'edit' }
