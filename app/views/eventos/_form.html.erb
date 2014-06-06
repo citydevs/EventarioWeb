@@ -53,6 +53,7 @@
                
 
 <label for="Selecciona fecha">Selecciona fechas:</label>
+<br>
 <input type="text" id="formaforma" name="from">
 
 <%= f.hidden_field :fecha_inicio , class: "text_formulario" ,:id=>'uno' %>
@@ -65,12 +66,16 @@
             </div>
 
             <div class="col-xs-6">
-              
+               <div class="col-xs-6">
                  <%= f.label :hora_inicio , class: "label_formulario"%><br>
-                <%= f.time_select :hora_inicio, :default=> {:hour=>"0",:minute=>"0"} %>
+                <%= f.time_select :hora_inicio, :default=> {:hour=>"0",:minute=>"0"} %><br>
+                </div>
+
+                 <div class="col-xs-6">
                 <%= f.label :hora_fin , class: "label_formulario"%><br>
                 <%= f.time_select :hora_fin %>
-              
+              </div>
+
 
             </div>
 
