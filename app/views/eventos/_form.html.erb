@@ -12,7 +12,7 @@
       </ul>
     </div>
   <% end %>
-  <div class="row boxNew">
+  <div class="row ">
     <div class="col-md-2">
    </div>
  <div class="col-md-8 box1">
@@ -21,13 +21,13 @@
 
 <br>
   <div class="field">
-    <%= f.label :nombre, "Nombre del Evento *" , class: "label_formulario"%><br>
+    <%= f.label :nombre, "Nombre del Evento " , class: "label_formulario"%><br>
     <%= f.text_field :nombre, class: "text_formulario" ,placeholder:"Yoga CDMX" %>
   </div>
   <div class="field">
 
-
-    <%= f.label :lugar, "Lugar donde sera el Evento *" , class: "label_formulario"%><br>
+<br>
+    <%= f.label :lugar, "Lugar donde sera el Evento " , class: "label_formulario"%><br>
     <%= f.text_field :lugar , class: "text_formulario" ,placeholder:"Angel de la Independencia"  %>
   </div>
 
@@ -35,60 +35,57 @@
 
 
 
+<br>
 
-
-    <%= f.label :direccion ,"Direccion *", class: "label_formulario"%><br>
+    <%= f.label :direccion ,"Direccion ", class: "label_formulario"%><br>
     <%= f.text_field :direccion , class: "text_formulario" ,placeholder:"Av Viaducto Rio de la Piedad y Rio Churubusco S/N, Granjas México, Iztacalco, 08400 Ciudad de México" %>
   </div>
-
-   <div class="col-xs-12">
-      
-      
-   </div>
-
-  <div class="col-xs-12">
-
-            <div class="col-xs-6">
-
-               
-
-<label for="Selecciona fecha">Selecciona fechas:</label>
 <br>
-<input type="text" id="formaforma" name="from">
-
-<%= f.hidden_field :fecha_inicio , class: "text_formulario" ,:id=>'uno' %>
-<%= f.hidden_field :fecha_fin , class: "text_formulario" ,:id=>'dos' %>
-
-      
-
-             
-
-            </div>
-
-            <div class="col-xs-6">
-               <div class="col-xs-6">
-                 <%= f.label :hora_inicio , class: "label_formulario"%><br>
-                <%= f.time_select :hora_inicio, :default=> {:hour=>"0",:minute=>"0"} %><br>
-                </div>
-
-                 <div class="col-xs-6">
-                <%= f.label :hora_fin , class: "label_formulario"%><br>
-                <%= f.time_select :hora_fin %>
-              </div>
-
-
-            </div>
-
-   </div>
+   
 
 
 
+   <div class="field">
+
+                         
+
+          <label for="Selecciona fecha">Selecciona fechas</label>
+        
+          <input type="text" id="formaforma" name="from" width="100%">
+
+          <%= f.hidden_field :fecha_inicio , class: "text_formulario" ,:id=>'uno' %>
+          <%= f.hidden_field :fecha_fin , class: "text_formulario" ,:id=>'dos' %>
+
+                
+
+                       
+
+  
+
+        
+           <%= f.label :hora_inicio , class: "label_formulario"%>
+          <%= f.time_select :hora_inicio, :default=> {:hour=>"0",:minute=>"0"} %>
+       
+
+           
+          <%= f.label :hora_fin , class: "label_formulario"%>
+          <%= f.time_select :hora_fin %> <br>
+        
+</div> <br>
+
+
+
+
+
+<!--
   <div class="field">
      <%= f.label :imagen, "Imagen" , class: "label_formulario"%><br>
       <%= f.text_field :imagen , class: "text_formulario" ,placeholder:"http://www.imagen.com/imagen.png"  %>
-  </div>
+  </div>-->
   <div class="field">
-    <%= f.label :descripcion, "Descripción del Evento *" , class: "label_formulario"%><br>
+    <%= f.label :descripcion, "Descripción del Evento" , class: "label_formulario"%>
+    <br>
+    
     <%= f.text_area :descripcion, class: "textarea_formulario" %>
   </div>
 
