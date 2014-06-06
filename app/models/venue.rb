@@ -4,4 +4,6 @@ searchkick autocomplete: ['nombre']
 validates :direccion, presence: true
 validates :latitud, presence: true
 validates :longitud, presence: true
+
+has_many :eventos
 end
