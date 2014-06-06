@@ -26,7 +26,8 @@
 
 class Evento < ActiveRecord::Base
   extend FriendlyId
-  
+
+  belongs_to :venue
   friendly_id :nombre, use: :slugged
   reverse_geocoded_by :latitud, :longitud
   validates :nombre, presence: true, uniqueness: true

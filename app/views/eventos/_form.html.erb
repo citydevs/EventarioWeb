@@ -26,9 +26,13 @@
   </div>
   <div class="field">
 
+
 <br>
-    <%= f.label :lugar, "Lugar donde sera el Evento " , class: "label_formulario"%><br>
-    <%= f.text_field :lugar , class: "text_formulario" ,placeholder:"Angel de la Independencia"  %>
+
+
+    <%= f.label :lugar, "Lugar donde sera el Evento *" , class: "label_formulario"%><br>
+
+    <%= f.text_field :lugar , class: "text_formulario", id: 'e1' ,placeholder:"Angel de la Independencia"  %>
   </div>
 
    <div class="field">
@@ -45,7 +49,20 @@
 
 
 
+   <div class="col-xs-12">
+
+
+   </div>
+
+  <div class="col-xs-12">
+
+
+
+
    <div class="field">
+
+
+
 
                          
 
@@ -53,10 +70,12 @@
         
           <input type="text" id="formaforma" name="from" width="100%">
 
+
           <%= f.hidden_field :fecha_inicio , class: "text_formulario" ,:id=>'uno' %>
           <%= f.hidden_field :fecha_fin , class: "text_formulario" ,:id=>'dos' %>
 
                 
+
 
                        
 
@@ -99,13 +118,13 @@
   </div>
   <div class="col-xs-4">
   <div class="field">
-  
+
      <%= f.label :Entrada_Libre , class: "label_formulario"%><br>
 <select name=sbox onChane="cambio()" id="op" >
 <option value="Si">Si</option>
 <option value="No">No</option>
 </select>
-     
+
    <br> <%= f.label :Precio, class: "label_formulario",:id=>'preciolbl' %><br>
     <%= f.text_field :precio, class: "text_formulario" ,placeholder:"$100" , :id=>'precio', value:"Entrada Libre"   %>
   </div>
