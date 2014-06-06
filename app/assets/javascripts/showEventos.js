@@ -15,7 +15,7 @@ marker = new google.maps.Marker({
         position: punto,
         map: map,
         title: 'Default Marker',
-        draggable:true,
+        draggable:false,
       icon: {
         url: '/pin.png'
       }
