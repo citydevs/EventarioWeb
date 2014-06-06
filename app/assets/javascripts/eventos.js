@@ -128,8 +128,8 @@ $(document).ready(function() {
   $('#e1').on('change', function(e) {
     console.log(e.added);
     $("#evento_direccion").val(e.added.direccion)
-    console.log(e.added.lat);
-    console.log(e.added.lng);
+    document.getElementById('lat').value = e.added.lat;
+        document.getElementById('lng').value = e.added.lng;
     clearMarkers()
 
     var pin1 = new google.maps.LatLng(e.added.lat,e.added.lng);
