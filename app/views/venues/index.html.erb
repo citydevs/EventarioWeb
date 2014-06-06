@@ -17,6 +17,7 @@
       </div>
     <% end %>
     <%= text_field_tag :query, params[:query], class: "form-control", id: "venue_search", autocomplete: "on" %>
+    <input id="e1" style="width:300px">
     <div class="input-group-btn">
       <%= submit_tag "Search", class: "btn btn-primary" %>
     </div>
@@ -28,8 +29,8 @@
     <th>Nombre</th>
     <th></th>
     <th>Direccion</th>
-  
-   
+
+
   </tr>
   <% @venues.each do |venue| %>
     <tr>
@@ -66,6 +67,6 @@
  </div>
 </div>
 </section>
-<%= javascript_include_tag "typeahead"  %>
+
 <%= javascript_include_tag "venues"  %>
 
