@@ -1,0 +1,37 @@
+
+<section class="container-fluid" id="section3">
+
+
+
+ <div class="col-md-12">
+ <div class="col-md-4">
+ </div>
+   <div class="col-md-4">
+    <h1>Lugar</h1>
+<p id="notice">
+  <%= notice %>
+</p>
+<p>
+  <b>Nombre:</b>
+  <%= @venue.nombre %>
+</p>
+<p>
+  <b>Direccion:</b>
+  <%= @venue.direccion %>
+</p>
+<p>
+  <b>Latitud:</b>
+  <%= @venue.latitud %>
+</p>
+<p>
+  <b>Longitud:</b>
+  <%= @venue.longitud %>
+</p>
+<%= link_to 'Editar', edit_venue_path(@venue) %>
+
+<%= link_to 'Volver', venues_path %>
+</div>
+  <div class="col-md-4">
+ </div>
+</div>
+</section>

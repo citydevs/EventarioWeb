@@ -26,10 +26,22 @@
 
 class Evento < ActiveRecord::Base
   extend FriendlyId
+
+  belongs_to :venue
   friendly_id :nombre, use: :slugged
   reverse_geocoded_by :latitud, :longitud
   validates :nombre, presence: true, uniqueness: true
-
+  validates :lugar, presence: true
+  validates :direccion, presence: true
+  validates :latitud, presence: true
+  validates :longitud, presence: true
+  validates :fecha_inicio, presence: true
+  validates :fecha_fin, presence: true
+  validates :hora_inicio, presence: true
+  validates :hora_fin, presence: true
+  validates :descripcion, presence: true
+  validates :precio, presence: true
+  validates :contacto, presence: true
   attr_reader :distancia
 
   def distancia=(val)

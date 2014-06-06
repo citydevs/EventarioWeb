@@ -18,13 +18,26 @@
   
 }
 
-.eventos_textos{
+.eventos_titulos_textos{
 
  color:#000;
- //font-size:70px;
+ font-size:60%;
 
 
  }
+
+.eventos_textos{
+
+ color:#000;
+ //font-size:60%;
+
+
+ }
+ th,td
+{
+padding:5px;
+}
+
  #barra{
  width: 1000px;
  min-width:1000px;
@@ -58,6 +71,7 @@ background-color: rgba(215, 44, 44, 0);
  #box{
  background-color:#F31734;
  }
+
  .titulo{
  color:white;
  font-family: "NIISans-Bold"; 
@@ -67,14 +81,14 @@ background-color: rgba(215, 44, 44, 0);
 
 input.localizarme{
     background: #fff url('/flecha.png') no-repeat top left;
-    padding-left: 36px;
+    padding-left: 27px;
     height: 36px;
     color: white;
     width: 23px;
 }
 input.buscar{
     background: #fff url('/search.png') no-repeat top left;
-    padding-left: 36px;
+    padding-left: 27px;
     height: 36px;
     color: white;
     width: 23px;

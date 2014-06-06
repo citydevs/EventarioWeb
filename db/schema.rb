@@ -11,7 +11,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20140528223333) do
+ActiveRecord::Schema.define(version: 20140606232242) do
 
   create_table "admin_users", force: true do |t|
     t.string   "email",                  default: "", null: false
@@ -51,6 +51,7 @@ ActiveRecord::Schema.define(version: 20140528223333) do
     t.datetime "created_at"
     t.datetime "updated_at"
     t.string   "slug"
+    t.integer  "venue_id"
   end
 
   add_index "eventos", ["slug"], name: "index_eventos_on_slug", unique: true
@@ -86,5 +87,14 @@ ActiveRecord::Schema.define(version: 20140528223333) do
 
   add_index "users", ["email"], name: "index_users_on_email", unique: true
   add_index "users", ["reset_password_token"], name: "index_users_on_reset_password_token", unique: true
+
+  create_table "venues", force: true do |t|
+    t.string   "nombre"
+    t.string   "direccion"
+    t.float    "latitud"
+    t.float    "longitud"
+    t.datetime "created_at"
+    t.datetime "updated_at"
+  end
 
 end

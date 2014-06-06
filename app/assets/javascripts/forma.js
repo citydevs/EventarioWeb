@@ -1,21 +1,47 @@
 
+window.fecha = "";
 
    $('#formaforma').datepick({
-    rangeSelect: true, monthsToShow: 2, showTrigger: '#calImg'});
+    rangeSelect: true, 
+    monthsToShow: 2, 
+    showTrigger: '#calImg',
+    onClose: function(dates){
+      console.log(dates[0]);
+      
+
+     
 
 
-console.log("fasdfasd");
-$.get(
-    "https://api.foursquare.com/v2/venues/search?client_id=FDAPOJ2FCI2XGEQ0D5JJYXIA5M3WU332TRFN0YMDB0SIEUFN&client_secret=2GQPSIP3W5FA0KPGGUHEXTD2E20PY2HIP2FJLIT34FDQO0PG&v=20130815&ll=19.432602,-99.133205&query=museo&radius=15000",
-   
-    function(data) {
-       //alert('page content: ' + data[0].nombre);
-     // $(".evento1")=data[0].nombre;
-    console.log(data);
+  var str =dates[0].toJSON();
+  var res = str.split("T");
+  var strF=res[0];
+  var resFecha1=strF.split("-");
+  var fecha1=resFecha1[2]+"-"+resFecha1[1]+"-"+resFecha1[0];
+   console.log(fecha1);
+   $("#uno").val(fecha1);
 
+
+   var str2 =dates[1].toJSON();
+  var res2 = str2.split("T");
+  var strF2=res2[0];
+  var resFecha2=strF2.split("-");
+  var fecha2=resFecha2[2]+"-"+resFecha2[1]+"-"+resFecha2[0];
+    $("#dos").val(fecha2);
+     
+    }});
+
+
+ cambio=function () {
+alert('test');
+  console.log("cambio");
     
-    }
-);
+
+}
+ 
+
+
+
+
 
 
 

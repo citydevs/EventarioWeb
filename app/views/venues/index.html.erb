@@ -1,0 +1,72 @@
+
+<section class="container-fluid" id="section3">
+
+
+
+ <div class="col-md-12">
+ <div class="col-md-2">
+ </div>
+   <div class="col-md-8">
+
+<div class="col-md-12" align=center>
+<%= form_tag venues_path, class: "form-inline", method: :get do %>
+  <div class="input-group input-group-lg">
+    <% if params[:query].present? %>
+      <div class="input-group-btn">
+        <%= link_to "clear", venues_path, class: "btn btn-default" %>
+      </div>
+    <% end %>
+    <%= text_field_tag :query, params[:query], class: "form-control", id: "venue_search", autocomplete: "on" %>
+    <input id="e1" style="width:300px">
+    <div class="input-group-btn">
+      <%= submit_tag "Search", class: "btn btn-primary" %>
+    </div>
+  </div>
+<% end %>
+<h1>Lista de  venues</h1>
+<table  WIDTH=100%>
+  <tr>
+    <th>Nombre</th>
+    <th></th>
+    <th>Direccion</th>
+
+
+  </tr>
+  <% @venues.each do |venue| %>
+    <tr>
+      <td>
+        <%= venue.nombre %>
+      </td>
+       <th></th>
+      <td>
+        <%= venue.direccion %>
+      </td>
+      <!-- <td>
+        <%= venue.latitud %>
+      </td>
+      <td>
+        <%= venue.longitud %>
+      </td>-->
+      <!--<td>
+        <%= link_to 'Ver', venue %>
+      </td>--><!--
+     <td>
+        <%= link_to 'Edit', edit_venue_path(venue) %>
+      </td>
+      <td>
+        <%= link_to 'Destroy', venue, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+      </td>-->
+    </tr>
+  <% end %>
+</table>
+<br/>
+<%= link_to 'Nuevo Venue', new_venue_path %>
+</div>
+</div>
+  <div class="col-md-2">
+ </div>
+</div>
+</section>
+
+<%= javascript_include_tag "venues"  %>
+

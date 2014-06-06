@@ -1,0 +1,44 @@
+
+<section class="container-fluid" id="section3">
+
+
+
+ <div class="col-md-12">
+ <div class="col-md-4">
+ </div>
+   <div class="col-md-4">
+
+<h2>Detalles de Usuario</h2>
+
+<p id="notice">
+  <%= notice %>
+</p>
+<table BORDER=1 WIDTH=100%>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Admin</th>
+      
+      <th>Editar</th>
+     
+    </tr>
+  </thead>
+  <tr>
+      <td>
+<%= @user.email %>
+</td>
+<td>
+<%= @user.admin %>
+</td>
+  <td>
+<%= link_to 'Editar', edit_user_path(@user) %>
+</td>
+</tr>
+
+</table>
+<%= link_to 'Volver', users_path %>
+</div>
+  <div class="col-md-4">
+ </div>
+</div>
+</section>

@@ -6,9 +6,11 @@ class Ability
     if user.admin?
         can :manage, Evento
         can :manage, User
+        can :manage, Venue
     else
         alias_action :index, :show, :mapa, :to => :read
         can :read, Evento
+        can :read, Venue
     end
     # Define abilities for the passed in user here. For example:
     #
