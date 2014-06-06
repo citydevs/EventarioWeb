@@ -32,6 +32,15 @@ class Evento < ActiveRecord::Base
   validates :nombre, presence: true, uniqueness: true
   validates :lugar, presence: true
   validates :direccion, presence: true
+  validates :latitud, presence: true
+  validates :longitud, presence: true
+  validates :fecha_inicio, presence: true
+  validates :fecha_fin, presence: true
+  validates :hora_inicio, presence: true
+  validates :hora_fin, presence: true
+  validates :descripcion, presence: true
+  validates :precio, presence: true
+  validates :contacto, presence: true
   attr_reader :distancia
 
   def distancia=(val)

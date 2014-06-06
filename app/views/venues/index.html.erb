@@ -1,3 +1,14 @@
+
+<section class="container-fluid" id="section3">
+
+
+
+ <div class="col-md-12">
+ <div class="col-md-2">
+ </div>
+   <div class="col-md-8">
+
+<div class="col-md-12" align=center>
 <%= form_tag venues_path, class: "form-inline", method: :get do %>
   <div class="input-group input-group-lg">
     <% if params[:query].present? %>
@@ -12,32 +23,32 @@
   </div>
 <% end %>
 <h1>Lista de  venues</h1>
-<table>
+<table  WIDTH=100%>
   <tr>
     <th>Nombre</th>
+    <th></th>
     <th>Direccion</th>
-    
-    <th></th>
-    <th></th>
-    <th></th>
+  
+   
   </tr>
   <% @venues.each do |venue| %>
     <tr>
       <td>
         <%= venue.nombre %>
       </td>
+       <th></th>
       <td>
         <%= venue.direccion %>
       </td>
-     <!--  <td>
+      <!-- <td>
         <%= venue.latitud %>
       </td>
       <td>
         <%= venue.longitud %>
       </td>-->
-      <td>
+      <!--<td>
         <%= link_to 'Ver', venue %>
-      </td><!--
+      </td>--><!--
      <td>
         <%= link_to 'Edit', edit_venue_path(venue) %>
       </td>
@@ -49,5 +60,12 @@
 </table>
 <br/>
 <%= link_to 'Nuevo Venue', new_venue_path %>
+</div>
+</div>
+  <div class="col-md-2">
+ </div>
+</div>
+</section>
 <%= javascript_include_tag "typeahead"  %>
 <%= javascript_include_tag "venues"  %>
+

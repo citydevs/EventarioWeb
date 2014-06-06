@@ -130,7 +130,8 @@ create_marker = function(point, map) {
   f1=f1.replace("Z","");
   var f2 = point.hora_fin.substring(11)
   f2=f2.replace("Z","");
-  content_string = '<div class="centro_info">' + '<div class="centro_encabezado">' + '<h4><font color="red">' + point.nombre + '</font></h4>' + '</div>' + '<div class="centro_content"' + '<p><img src="donde.png" width="20" height="23" />' + point.lugar + ' <img src="hora.png" width="20" height="23" />'+ f1+"-"+f2 +  '<p> <img src="donde.png" width="20" height="23" />' + point.direccion + '</p>'+'</p>' + '</div>' + '</div>';
+  var nombre_evento = "<h4  class='eventos_textos'><a href='"+point.url+"'><font color='#000'>" + point.nombre + "</font></a></h4>";
+  content_string = '<div class="centro_info">' + '<div class="centro_encabezado">' + '<h4><font color="red">' + nombre_evento + '</font></h4>' + '</div>' + '<div class="centro_content"' + '<p><img src="donde.png" width="23" height="23" />' + point.lugar +  '</p>' + '</div>' + '</div>';
   marker = new google.maps.Marker({
     position: new google.maps.LatLng(point.latitud, point.longitud),
     animation: google.maps.Animation.DROP,
@@ -255,15 +256,14 @@ card = function(point) {
   //fecha = "<div class='col-md-12'><div class='col-md-1'><img src='hora.png' width='20' height='23' /></div><div class='col-md-6'>" + point.fecha_inicio +"-"+point.fecha_fin + "</div><div class='col-md-4 boxCategoria'>"+point.categoria+"</div></div>";
   var str1=point.fecha_inicio;
   var r1=str1.split("-");
-  var nf1=r1[2]+"/"+r1[1];
+  var nf1=r1[2]+"/"+r1[1]+"/"+r1[0];
 
   var str2=point.fecha_fin;
   var r2=str2.split("-");
-  var nf2=r2[2]+"/"+r2[1];
-  fecha = '<p></p><img src="fecha.png" width="23" height="23" />'+ nf1 +"-"+nf2+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+point.categoria;
-  
+  var nf2=r2[2]+"/"+r2[1]+"/"+r2[0];
+  fecha = '<p><img src="fecha.png" width="23" height="23" />'+ nf1 +"-"+nf2+"</p>"; 
   nombre_centro = "<h4  class='eventos_textos'><a href='"+point.url+"'><font color='#000'>" + point.nombre + "</font></a></h4>";
-  direccion_centro = "<p class='lugarTarget'>" +'<img src="donde.png" width="23" height="23" />'+ point.lugar + "</p>";
+  direccion_centro = "<p class='lugarTarget'>" +'<img src="donde.png" width="23" height="23" /><font color="#000">'+ point.lugar + "</font></p>";
 
   var f1 = point.hora_inicio.substring(11)
   f1=f1.replace("Z","");
@@ -272,7 +272,7 @@ card = function(point) {
   horario_centro = "<p class='direccionTarget'>" + point.direccion + "</p>";
   telefonos_centro = "<p class='horaTarget'>" +'<img src="hora.png" width="23" height="23" />'+ f1 +"-"+f2+ "</p>";
   //hacer_cita = "<span class='card_cita'><a href='places/" + point.lugar + "'>Agenda una cita</a></span>";
-  return div_card_centro = "<div class='col-md-12 box1'>"+"<div class='card '>" + fecha +nombre_centro + direccion_centro + horario_centro + telefonos_centro  + "<div class='space'></div></div></div>";
+  return div_card_centro = "<div class='col-md-12 box1'>"+"<div class='card '><img src=/categorias/"+point.categoria+".png width='23' height='23' /><font color='red'>" +point.categoria+"&nbsp&nbsp&nbsp&nbsp"+point.distancia+"Km.</font>" +nombre_centro +direccion_centro +fecha  +telefonos_centro   + "<div class='space'></div></div></div>";
 };
 
 submit_ajax_form = function() {

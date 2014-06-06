@@ -9,7 +9,7 @@ window.fecha = "";
       console.log(dates[0]);
       
 
-     $("#uno").hidden=false;
+     
 
 
   var str =dates[0].toJSON();
@@ -31,7 +31,13 @@ window.fecha = "";
     }});
 
 
+ cambio=function () {
+alert('test');
+  console.log("cambio");
+    
 
+}
+ 
 
 
 

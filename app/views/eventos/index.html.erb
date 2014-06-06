@@ -1,8 +1,17 @@
-<h1>Listing eventos</h1>
+
+<section class="container-fluid" id="section3">
+
+
+
+ <div class="col-md-12">
+ <div class="col-md-2">
+ </div>
+   <div class="col-md-8">
+<h1>Lista de eventos</h1>
 <%= will_paginate @eventos %>
 
 
-<table BORDER=1 WIDTH=50%>
+<table  WIDTH=100% heigth=20px>
   <thead>
     <tr>
       <th>Nombre</th>
@@ -22,7 +31,7 @@
       <th>Pagina</th>
       <th>Latitud</th>
       <th>Longitud</th>-->
-      <th></th>
+      <th>Mostrar</th>
       
     </tr>
   </thead>
@@ -33,6 +42,7 @@
         <td><%= evento.nombre %></td>
         <td><%= evento.fecha_inicio %></td>
         <td><%= evento.fecha_fin %></td>
+
       <!--  <td><%= evento.lugar %></td>
         <td><%= evento.hora_inicio %></td>
         <td><%= evento.hora_fin %></td>
@@ -50,11 +60,22 @@
         <td><%= link_to 'Mostrar', evento %></td>
       <!--  <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
         <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
+        
       </tr>
+
+      
+       
+
+        
     <% end %>
   </tbody>
 </table>
 
 <br>
 
-<%= link_to 'New Evento', new_evento_path %>
+<%= link_to 'Nuevo Evento', new_evento_path %>
+</div>
+  <div class="col-md-2">
+ </div>
+</div>
+</section>

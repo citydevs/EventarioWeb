@@ -1,0 +1,52 @@
+
+<section class="container-fluid" id="section3">
+
+
+
+ <div class="col-md-12">
+ <div class="col-md-4">
+ </div>
+   <div class="col-md-4">
+<h1>Lista de Usuarios</h1>
+<table WIDTH=100%>
+  <thead>
+    <tr>
+      <th>Email</th>
+      <th>Admin</th>
+      <th></th>
+   <!--   <th>Ver</th>-->
+      <th>Editar</th>
+      <th></th>
+      <th>Eliminar</th>
+    </tr>
+  </thead>
+  <% @users.each do |user| %>
+    <tr>
+      <td>
+        <%= user.email %>
+      </td>
+      <td>
+        <%= user.admin? %>
+      </td>
+      <!--<td>
+        <%= link_to 'Ver', user %>
+      </td>-->
+      <th></th>
+      <td>
+        <%= link_to 'Editar', edit_user_path(user) %>
+      </td>
+      <th></th>
+      <td>
+        <%= link_to 'Eliminar', user, :method => :delete, :data => { :confirm => 'Are you sure?' } %>
+      </td>
+    </tr>
+  <% end %>
+</table>
+<br/>
+<!--/= link_to 'New User', new_user_path
+-->
+</div>
+  <div class="col-md-4">
+ </div>
+</div>
+</section>

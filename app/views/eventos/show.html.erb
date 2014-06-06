@@ -1,6 +1,6 @@
 <!--<p id="notice"><%= notice %></p>-->
-<div class="boxNew" align=center>   <div class="titulo">Descripción del evento</div></div>
-<div class="row boxNew">
+<div class="" align=center>   <div class="titulo">Descripción del evento</div></div>
+<div class="row ">
 
 <div class="col-xs-12">
         <div class="col-xs-1">
@@ -15,6 +15,10 @@
                   <div class="row">
 
                       <div class="col-xs-6">
+                        <p>
+                      
+                      <font color='red'><%= @evento.categoria %></font>
+                    </p>
                         <p>
                       <strong>
                       <h1><span  class='eventos_textos'> <%= @evento.nombre %> </span></h1></strong>
@@ -47,20 +51,25 @@
                       <strong>Fuente:</strong>
                       <%= @evento.fuente %>
                     </p>-->
+                       <p>
+                      <img src="/informacion.png" width="25" height="25" />
+                    <span class='eventos_textos'>   <%= @evento.descripcion %></span>
+                    </p>
+
                     <p>
+                      <row>
                      <img src="/precio.png" width="25" height="25" />
                       <%= @evento.precio %>
-                    </p>
-
-                    <p>
-                      <strong>Categoria:</strong>
-                      <%= @evento.categoria %>
-                    </p>
-
-                    <p>
                        <img src="/telefono.png" width="25" height="25" />
                       <%= @evento.contacto %>
+                    </row>
+
                     </p>
+
+                    
+
+                    <p>
+                                          </p>
 
                     <p>
                       <img src="/web.png" width="25" height="25" />
@@ -76,11 +85,7 @@
                     </p>-->
 
 
-                    <p>
-                      <img src="/informacion.png" width="25" height="25" />
-                    <span class='eventos_textos'>   <%= @evento.descripcion %></span>
-                    </p>
-
+                 
                     
 
                       </div>

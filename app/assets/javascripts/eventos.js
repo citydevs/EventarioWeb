@@ -53,14 +53,34 @@ google.maps.event.addListener(marker,'dragend',function(event) {
 
   $(document).ready(function(){
    initialize()
-
+document.getElementById("precio").style.visibility = "hidden";
+document.getElementById("preciolbl").style.visibility = "hidden";
 /*   $("#formaforma").blur(function() {
     console.log("sdasd");
    });*/
+$("#op").change(function(){
 
+    
+    console.log(document.getElementById("op").value);
+    if (document.getElementById("op").value=="Si") {
+
+        $("#precio").val("Entrada Libre");
+        document.getElementById("precio").style.visibility = "hidden";
+        document.getElementById("preciolbl").style.visibility = "hidden";
+
+    }
+    else{
+
+     $("#precio").val("")
+     document.getElementById("precio").style.visibility = "visible";
+     document.getElementById("preciolbl").style.visibility = "visible";
+
+    }
+
+  });
 
  })
-
+/*
  auto=function () {
 
    //console.log(document.getElementById('formaforma').value );
@@ -71,5 +91,8 @@ google.maps.event.addListener(marker,'dragend',function(event) {
     $("#dos").val(res[1]);
     
 
-}
+}*/
+
+
+
  

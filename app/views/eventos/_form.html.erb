@@ -19,7 +19,7 @@
 
 
 
-
+<br>
   <div class="field">
     <%= f.label :nombre, "Nombre del Evento *" , class: "label_formulario"%><br>
     <%= f.text_field :nombre, class: "text_formulario" ,placeholder:"Yoga CDMX" %>
@@ -97,16 +97,20 @@
    <div class="field">
     <%= f.label :categoria, class: "label_formulario" %><br>
 
-     <%= f.select :categoria, options_for_select([ "Deportivo", "Cine", "Exposiciones", "Infantile","Música","Cultura","Teatro","Aprendizaje" ], "Deportivo") %>
+     <%= f.select :categoria, options_for_select([ "Deportivo", "Cine", "Exposiciones", "Infantiles","Música","Cultura","Teatro","Aprendizaje","Tecnologia" ], "Deportivo") %>
     </div>
   </div>
   <div class="col-xs-4">
   <div class="field">
-    <%= f.label :Entrada_Libre, class: "label_formulario" %><br>
-
-     <%= f.select :precio, options_for_select([ "Si", "No"], "Si") %>
-    <%= f.label :precio , class: "label_formulario"%><br>
-    <%= f.text_field :precio, class: "text_formulario" ,placeholder:"Entrada Libre"  %>
+  
+     <%= f.label :Entrada_Libre , class: "label_formulario"%><br>
+<select name=sbox onChane="cambio()" id="op" >
+<option value="Si">Si</option>
+<option value="No">No</option>
+</select>
+     
+   <br> <%= f.label :Precio, class: "label_formulario",:id=>'preciolbl' %><br>
+    <%= f.text_field :precio, class: "text_formulario" ,placeholder:"$100" , :id=>'precio', value:"Entrada Libre"   %>
   </div>
   </div>
 <div class="col-xs-4">
@@ -149,9 +153,11 @@
   </div>
   </div>
   </div>
+  <br>
   <div class="actions">
     <%= f.submit %>
   </div>
+  <br>
 </div>
 
    <div class="col-md-2 ">
