@@ -143,7 +143,9 @@ $(document).ready(function() {
       icon: {
         url: '/pin.png'
       }
+
 });
+    window.markers.push(marker);
   })
 });
 
