@@ -21,8 +21,14 @@ marker = new google.maps.Marker({
       }
 });
 
-
-
+  var f1 = document.getElementById("hi").innerText.substring(11)
+  f1=f1.replace("UTC","");
+  var f2 = document.getElementById("hf").innerText.substring(11)
+  f2=f2.replace("UTC","");
+ console.log(f1);
+  console.log(f2);
+  var a=f1 + "-"+f2;
+    $("#horas").text(a);
 
 
   }

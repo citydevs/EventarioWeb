@@ -127,6 +127,7 @@ $(document).ready(function() {
 
   $('#e1').on('change', function(e) {
     console.log(e.added);
+    console.log("otro");
     $("#evento_direccion").val(e.added.direccion)
     document.getElementById('lat').value = e.added.lat;
         document.getElementById('lng').value = e.added.lng;

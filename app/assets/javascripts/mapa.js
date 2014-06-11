@@ -130,7 +130,7 @@ create_marker = function(point, map) {
   f1=f1.replace("Z","");
   var f2 = point.hora_fin.substring(11)
   f2=f2.replace("Z","");
-  var nombre_evento = "<h4  class='eventos_textos'><a href='"+point.url+"'><font color='#000'>" + point.nombre + "</font></a></h4>";
+  var nombre_evento = "<h5  class='eventos_textos'><a href='"+point.url+"'><font color='#000'>" + point.nombre + "</font></a></h5>";
   content_string = '<div class="centro_info">' + '<div class="centro_encabezado">' + '<h4><font color="red">' + nombre_evento + '</font></h4>' + '</div>' + '<div class="centro_content"' + '<p><img src="donde.png" width="23" height="23" />' + point.lugar +  '</p>' + '</div>' + '</div>';
   marker = new google.maps.Marker({
     position: new google.maps.LatLng(point.latitud, point.longitud),
@@ -272,7 +272,7 @@ card = function(point) {
   horario_centro = "<p class='direccionTarget'>" + point.direccion + "</p>";
   telefonos_centro = "<p class='horaTarget'>" +'<img src="hora.png" width="23" height="23" />'+ f1 +"-"+f2+ "</p>";
   //hacer_cita = "<span class='card_cita'><a href='places/" + point.lugar + "'>Agenda una cita</a></span>";
-  return div_card_centro = "<div class='col-md-12 box1'>"+"<div class='card '><img src=/categorias/"+point.categoria+".png width='23' height='23' /><font color='red'>" +point.categoria+"&nbsp&nbsp&nbsp&nbsp"+point.distancia+"Km.</font>" +nombre_centro +direccion_centro +fecha  +telefonos_centro   + "<div class='space'></div></div></div>";
+  return div_card_centro = "<div class='col-md-12 box1'>"+"<div class='card '><table  WIDTH=100% border=0px heigth=20px><thead><tr></tr></thead> <tbody><tr><td width='8%'> <img src=/categorias/"+point.categoria+".png width='23' height='23' /></td><td width='92%'><font color='red'>" +point.categoria+"&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp&nbsp"+point.distancia+"Km.</font></td></tr> <tr> <td width='8%'></td><td width='92%'>"+nombre_centro+"</td></tr><tr> <td width='8%'><img src='donde.png' width='23' height='23' /></td><td width='92%'>"+ point.lugar+"</td></tr><tr> <td width='8%'><img src='fecha.png' width='23' height='23' /></td><td width='92%'>"+ nf1+" - "+nf2+"</td></tr><tr> <td width='8%'><img src='hora.png' width='23' height='23' /></td><td width='92%'>"+ f1+" - "+f2+"</td></tr></tbody></table><div class='space'></div></div></div>";
 };
 
 submit_ajax_form = function() {

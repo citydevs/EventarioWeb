@@ -1,125 +1,220 @@
 <!--<p id="notice"><%= notice %></p>-->
-<div class="" align=center>   <div class="titulo">Descripción del evento</div></div>
+
 <div class="row ">
 
-<div class="col-xs-12">
-        <div class="col-xs-1">
+<div class="col-md-12">
+        <div class="col-md-1">
         </div>
-              <div class="col-xs-10 box1">
 
-                 <div class="col-xs-0.5">
-                 </div>
-
-                 <div class="col-xs-12">
-
-                  <div class="row">
-
-                      <div class="col-xs-6">
-                        <p>
-                      
-                      <font color='red'><%= @evento.categoria %></font>
-                    </p>
-                        <p>
-                      <strong>
-                      <h1><span  class='eventos_textos'> <%= @evento.nombre %> </span></h1></strong>
-                       </p>
-
-                    <p>
-
-                      <img src="/donde.png" width="25" height="25" />
-                      <span class='eventos_textos'>  <%= @evento.lugar %></span>
-                    </p>
-                    <p>
-                   
-                    <span class='eventos_textos'>  <%= @evento.direccion %></span>
-                    </p>
-                    <p>
-                      <img src="/fecha.png" width="25" height="25" />
-                    <span class='eventos_textos'>   <%= @evento.fecha_inicio %>  - <%= @evento.fecha_fin %></span>
-                    </p>
-
-
-
-                    <p>
-
-                      <img src="/hora.png" width="25" height="25" />
-                     <span class='eventos_textos'>  <%= @evento.hora_inicio %> a
-                      <%= @evento.hora_fin %></span>
-                    </p>
-
-                   <!-- <p>
-                      <strong>Fuente:</strong>
-                      <%= @evento.fuente %>
-                    </p>-->
-                       <p>
-                      <img src="/informacion.png" width="25" height="25" />
-                    <span class='eventos_textos'>   <%= @evento.descripcion %></span>
-                    </p>
-
-                    <p>
-                      <row>
-                     <img src="/precio.png" width="25" height="25" />
-                      <%= @evento.precio %>
-                       <img src="/telefono.png" width="25" height="25" />
-                      <%= @evento.contacto %>
-                    </row>
-
-                    </p>
-
-                    
-
-                    <p>
-                                          </p>
-
-                    <p>
-                      <img src="/web.png" width="25" height="25" />
-                      <a href='<%=@evento.pagina %>'><%= @evento.pagina %></a>
-                    </p>
-                    <!--<p>
-                      <strong>Hora fin:</strong>
-                      <%= @evento.hora_fin %>
-                    </p>
-                    <p>
-                      <strong>Fecha fin:</strong>
-                      <%= @evento.fecha_fin %>
-                    </p>-->
-
+        <div class="col-md-10 box1">
 
                  
-                    
 
+                 <div class="col-md-12">
+
+                          <div class="row">
+
+                              <div class="col-md-12" >
+                              
+                                <p>
+                                   <strong><h3><span  class='eventos_textos'> <%= @evento.nombre %> </span></h3></strong>
+                               </p>
+
+                               
+                                </div>
+
+                                <div class="col-md-6">
+
+
+                                    <table  WIDTH=100% border= 0px heigth=20px>
+                                      <thead>
+                                      
+                                      </thead>
+
+                                      <tbody>
+                                          <tr>
+                                            <td  width='8%'><img src='/categorias/<%= @evento.categoria %>.png' width='23' height='23' />
+                                            </td>
+
+                                            <td width='92%'> <font color='red'><%= @evento.categoria %></font> </td>
+                                           </tr>
+
+                                           <tr>
+                                            <td  width='8%'><img src="/fecha.png" width="25" height="25" />
+                                            </td>
+
+                                            <td width='92%'> <span class='eventos_textos'>   <%= @evento.fecha_inicio %>  - <%= @evento.fecha_fin %></span></td>
+                                           </tr>
+
+                                           <tr>
+                                            <td  width='8%'><img src="/hora.png" width="25" height="25" />
+                                            </td>
+
+                                            <td width='92%'> <span id="horas">dfsfd</span></td>
+                                           </tr>
+
+                                           <tr>
+                                            <td  width='8%'> <img src="/donde.png" width="25" height="25" />                                            </td>
+
+                                            <td width='92%'>  <span class='eventos_textos'>  <%= @evento.lugar %></span></td>
+                                           </tr>
+
+                                           <tr>
+                                            <td  width='8%'>
+                                            </td>
+
+                                            <td width='92%'> <span class='eventos_textos'>  <%= @evento.direccion %></span></td>
+                                           </tr>
+
+                                           <tr>
+                                            <td  width='8%'> <img src="/telefono.png" width="25" height="25" />
+                              
+                                            </td>
+
+                                            <td width='92%'> <%= @evento.contacto %></td>
+                                           </tr>
+
+                                           <tr>
+                                            <td  width='8%'><img src="/web.png" width="25" height="25" />
+                                
+                                            </td>
+
+                                            <td width='92%'><a href='<%=@evento.pagina %>'><%= @evento.pagina %></a></td>
+                                           </tr>
+
+                                           
+                                           <tr>
+                                            <td  width='8%'> <img src="/informacion.png" width="25" height="25" />
+                             
+                                            </td>
+
+                                            <td width='92%'>  <span class='eventos_textos'>   <%= @evento.descripcion %></span></span></td>
+                                           </tr>
+
+                                           <tr>
+                                            <td  width='8%'> <img src="/precio.png" width="25" height="25" />
+                                
+                                            </td>
+
+                                            <td width='92%'> <%= @evento.precio %></td>
+                                           </tr>
+
+                                       
+                                      </tbody>
+                                    </table>
+                              
+                                 
+                                 <!--<p>
+                                 <img src='/categorias/<%= @evento.categoria %>.png' width='23' height='23' />
+                                 <font color='red'><%= @evento.categoria %></font> 
+                                </p>
+                                
+                                <p>
+
+                                    <img src="/fecha.png" width="25" height="25" />
+                                   
+
+                                  
+                                  <span class='eventos_textos'>   <%= @evento.fecha_inicio %>  - <%= @evento.fecha_fin %></span>
+                                 
+                                </p>
+
+
+                                
+
+
+
+                                  <p>
+
+                                    <img src="/hora.png" width="25" height="25" />
+                                   
+                                    <span id="horas">dfsfd</span>-->
+
+                                     <span  hidden=true id="hi"> <%= @evento.hora_inicio %></span>
+                                      <span  hidden=true id="hf"> <%= @evento.hora_fin %></span>
+                                 <!-- </p>
+                                <p>
+
+                                  <img src="/donde.png" width="25" height="25" />
+                                  <span class='eventos_textos'>  <%= @evento.lugar %></span>
+                                </p>
+
+                            <p>
+                       
+                            <span class='eventos_textos'>  <%= @evento.direccion %></span>
+                            </p>
+                             <p>
+                                 <img src="/telefono.png" width="25" height="25" />
+                              <%= @evento.contacto %>
+                                               </p>
+
+                              <p>
+                                <img src="/web.png" width="25" height="25" />
+                                <a href='<%=@evento.pagina %>'><%= @evento.pagina %></a>
+                              </p>-->
+
+                           <!-- <p>
+                              <strong>Fuente:</strong>
+                              <%= @evento.fuente %>
+                            </p>-->
+                             <!-- <p>
+                                <img src="/informacion.png" width="25" height="25" />
+                              <span class='eventos_textos'>   <%= @evento.descripcion %></span>
+                              </p>
+
+                              <p>
+                                <row>
+                               <img src="/precio.png" width="25" height="25" />
+                                <%= @evento.precio %>
+                                 
+                              </row>
+
+                              </p>-->
+
+                            <!--<p>
+                              <strong>Hora fin:</strong>
+                              <%= @evento.hora_fin %>
+                            </p>
+                            <p>
+                              <strong>Fecha fin:</strong>
+                              <%= @evento.fecha_fin %>
+                            </p>-->
+
+                              </div>
+
+                              <div class="col-md-6">
+                                      <p>
+
+                                     <p class="text-center">
+                                      <!--<img src="<%= @evento.imagen %>" class="img-responsive center-block ">-->
+                                       <div id="map_canvas" style="width:100%;height:500px;"></div>
+                                    </p>
+
+                                  </p>
+                              </div>
+
+
+                            
+                            <p>
+                              
+                             <span  hidden=true id="lat"> <%= @evento.latitud %></span>
+                            </p>
+
+                            <p>
+                             
+                             <span hidden=true id="lon"> <%= @evento.longitud %></span>
+                            </p>
+                           
                       </div>
-                      <div class="col-xs-6">
-                        <p>
+                  </div>
 
-                       <p class="text-center">
-                        <!--<img src="<%= @evento.imagen %>" class="img-responsive center-block ">-->
-                         <div id="map_canvas" style="width:100%;height:500px;"></div>
-                      </p>
+                  
 
-                    </p>
-                      </div>
+        </div>
 
-
-                    
-                    <p>
-                      
-                     <span  hidden=true id="lat"> <%= @evento.latitud %></span>
-                    </p>
-
-                    <p>
-                     
-                     <span hidden=true id="lon"> <%= @evento.longitud %></span>
-                    </p>
-                     <p class="text-center">
-                       <div id="map_canvas" style="width:100%;height:400px;"></div>
-
-                      </p>
-
-                     </div>
-                </div>
-
-            </div>
+       
+        <div class="col-md-1">
+        </div>
 </div>
 </div>
 
