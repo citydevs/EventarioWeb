@@ -41,13 +41,12 @@ gm_init = function() {
 
     center: gm_center,
     zoom: 14,
-     maxZoom: 14,
-      minZoom: 13,
+     
     mapTypeId: gm_map_type,panControl: true,
   panControlOptions: {
   position: google.maps.ControlPosition.RIGHT_TOP
 },
-zoomControl: false,
+zoomControl: true,
 zoomControlOptions: {
   style: google.maps.ZoomControlStyle.LARGE,
   position: google.maps.ControlPosition.RIGHT_TOP

@@ -68,7 +68,7 @@
 
           <label for="Selecciona fecha">Selecciona fechas</label>
         
-          <input type="text" id="formaforma" name="from" width="100%">
+          <input type="text" id="formaforma" name="from" width="140%">
 
 
           <%= f.hidden_field :fecha_inicio , class: "text_formulario" ,:id=>'uno' %>
@@ -90,7 +90,8 @@
           <%= f.label :hora_fin , class: "label_formulario"%>
           <%= f.time_select :hora_fin %> <br>
         
-</div> <br>
+</div> 
+<br>
 
 
 
@@ -110,13 +111,13 @@
 
 <div class="col-xs-12">
 
-  
+  <div class="col-xs-4">
    <div class="field">
     <%= f.label :categoría, class: "label_formulario" %><br>
 
      <%= f.select :categoria, options_for_select([ "Deportivo", "Cine", "Exposiciones", "Infantiles","Música","Cultura","Teatro","Aprendizaje","Tecnología" ], "Deportivo") %>
     </div>
-  
+  </div>
 
   <div class="col-xs-4">
   <div class="field">
