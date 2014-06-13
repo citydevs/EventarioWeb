@@ -18,7 +18,7 @@
  <div class="col-md-8 box1">
 
 
-
+<div class="col-xs-12">
 <br>
   <div class="field">
     <%= f.label :nombre, "Nombre del Evento " , class: "label_formulario"%><br>
@@ -49,7 +49,7 @@
 
 
 
-   <div class="col-xs-12">
+   
 
 
    </div>
@@ -96,11 +96,11 @@
 
 
 
-<!--
+
   <div class="field">
      <%= f.label :imagen, "Imagen" , class: "label_formulario"%><br>
       <%= f.text_field :imagen , class: "text_formulario" ,placeholder:"http://www.imagen.com/imagen.png"  %>
-  </div>-->
+  </div>
   <div class="field">
     <%= f.label :descripcion, "Descripción del Evento" , class: "label_formulario"%>
     <br>
@@ -109,13 +109,15 @@
   </div>
 
 <div class="col-xs-12">
-  <div class="col-xs-4">
+
+  
    <div class="field">
     <%= f.label :categoría, class: "label_formulario" %><br>
 
      <%= f.select :categoria, options_for_select([ "Deportivo", "Cine", "Exposiciones", "Infantiles","Música","Cultura","Teatro","Aprendizaje","Tecnología" ], "Deportivo") %>
     </div>
-  </div>
+  
+
   <div class="col-xs-4">
   <div class="field">
 
@@ -129,6 +131,7 @@
     <%= f.text_field :precio, class: "text_formulario" ,placeholder:"$100" , :id=>'precio', value:"Entrada Libre"   %>
   </div>
   </div>
+
 <div class="col-xs-4">
    <div class="field">
     <%= f.label :fuente , class: "label_formulario"%><br>
