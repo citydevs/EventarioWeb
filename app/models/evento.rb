@@ -22,6 +22,7 @@
 #  created_at   :datetime
 #  updated_at   :datetime
 #  slug         :string(255)
+#  venue_id     :integer
 #
 
 class Evento < ActiveRecord::Base
