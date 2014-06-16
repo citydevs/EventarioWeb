@@ -1,4 +1,4 @@
-// Place all the styles related to the Eventos controller here.
+ // Place all the styles related to the Eventos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
 #mapa{
@@ -82,19 +82,24 @@ background-color: rgba(215, 44, 44, 0);
 input.localizarme{
     background: #fff url('/flecha.png') no-repeat top left;
     padding-left: 27px;
-    height: 36px;
+    height: 37px;
     color: white;
-    width: 23px;
+    width: 37px;
+    border:none;
+
 }
 input.buscar{
     background: #fff url('/search.png') no-repeat top left;
     padding-left: 27px;
-    height: 36px;
+    height: 37px;
     color: white;
-    width: 23px;
+    width: 37px;
+    border:none;
 }
 input.barra{
     width:67%;
    // padding-left: 36px;
-    height: 36px;
+    height: 37px;
+    border:none;
+
 }
