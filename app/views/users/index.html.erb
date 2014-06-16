@@ -13,6 +13,7 @@
     <tr>
       <th>Email</th>
       <th>Admin</th>
+      <th>Editor?</th>
       <th></th>
    <!--   <th>Ver</th>-->
       <th>Editar</th>
@@ -27,6 +28,9 @@
       </td>
       <td>
         <%= user.admin? %>
+      </td>
+      <td>
+        <%= user.editor? %>
       </td>
       <!--<td>
         <%= link_to 'Ver', user %>

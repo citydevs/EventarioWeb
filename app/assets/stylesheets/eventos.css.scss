@@ -8,14 +8,14 @@
 }
 #tarjetas {
   max-height: 50%;
-  overflow-y:scroll; 
+  overflow-y:scroll;
   height: inherit;
   height: 600px;
   //position:absolute;
   //overflow: scroll;
   //width: 35%;
   //float: right;
-  
+
 }
 
 .eventos_titulos_textos{
@@ -49,12 +49,12 @@ padding:5px;
  width: 1000px;
  min-width:1000px;
  }
- 
+
  .lugar{
  min-width:1000px;
  width: 1000px;
  }
- 
+
  .space{
 border-style:none;
 max-height: 2px;
@@ -67,14 +67,14 @@ background-color: rgba(215, 44, 44, 1);
 border-style:none;
 background-color: rgba(215, 44, 44, 0);
  }
- 
+
  #box{
  background-color:#F31734;
  }
 
  .titulo{
  color:white;
- font-family: "NIISans-Bold"; 
+ font-family: "NIISans-Bold";
  src: url("/fuentes/NIISans-Bold.ttf") format ("ttf");
  font-size:25px;
  }

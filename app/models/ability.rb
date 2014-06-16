@@ -7,6 +7,9 @@ class Ability
         can :manage, Evento
         can :manage, User
         can :manage, Venue
+    elsif user.editor?
+        can :manage, Evento
+        can :manage, Venue
     else
         alias_action :index, :show, :mapa, :to => :read
         can :read, Evento

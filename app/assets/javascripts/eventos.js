@@ -101,6 +101,7 @@ $(document).ready(function() {
     ajax: {
       url: '/venues',
       dataType: 'json',
+      minimumResultsForSearch: -1,
       data: function(term, pag) {
         return {
           query: term,
