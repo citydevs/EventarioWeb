@@ -23,3 +23,5 @@ Eventario utiliza **Elasticsearch** para ciertas busquedas, si utilizas OSX pued
     brew install elasticsearch
     
 En modo Desarrollo, Eventario utiliza SQLite. Sin embargo, en modo de producción recuerda instalar Postgresql.
+
+Para poder agregar venues o eventos, recuerda que Eventario utiliza un administrador. registra un usuario y en la consola de rails obten tu usuario y cambia el campo de ```admin``` de **false** a **true**
