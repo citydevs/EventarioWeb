@@ -16,14 +16,22 @@ class EventosController < ApplicationController
         if params[:lat] || params[:lon]
           distancia = params[:dist] ||= 1
           @eventos = Evento.where(nil)
-          @eventos = @eventos.pasando_hoy.near([params[:lat], params[:lon]], distancia,{ units: :km})
+          if params[:fecha].present?
+            @eventos = @eventos.pasando_en(params[:fecha]).near([params[:lat], params[:lon]], distancia,{ units: :km})
+          else
+            @eventos = @eventos.pasando_hoy.near([params[:lat], params[:lon]], distancia,{ units: :km})
+          end
           @eventos = @eventos.by_category(params[:categorias].map(&:downcase)) if params[:categorias].present?
           @eventos.each do |evento|
             evento.distancia = evento.distance_to([params[:lat], params[:lon]], :km)
           end
         else
           @eventos = Evento.where(nil)
-          @eventos = Evento.pasando_hoy
+          if params[:fecha].present?
+            @eventos = Evento.pasando_en(params[:fecha]) 
+          else
+            @eventos = Evento.pasando_hoy
+          end
           @eventos = @eventos.by_category(params[:categorias].map(&:downcase)) if params[:categorias].present?
         end
 

@@ -63,4 +63,8 @@ class Evento < ActiveRecord::Base
     Evento.where("? >= fecha_inicio AND ? <= fecha_fin", Date.today, Date.today)
   end
 
+  def self.pasando_en(fecha)
+    Evento.where("? >= fecha_inicio AND ? <= fecha_fin", fecha, fecha)
+  end
+
 end
