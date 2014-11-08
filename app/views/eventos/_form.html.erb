@@ -1,209 +1,148 @@
-
-
 <%= form_for(@evento) do |f| %>
-  <% if @evento.errors.any? %>
-    <div id="error_explanation">
-      <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
-
-      <ul>
-      <% @evento.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-      <% end %>
-      </ul>
-    </div>
-  <% end %>
-  <div class="row ">
-    <div class="col-md-2">
-   </div>
- <div class="col-md-8 box1">
-
-
-<div class="col-xs-12">
-<br>
-  <div class="field">
-    <%= f.label :nombre, "Nombre del Evento " , class: "label_formulario"%><br>
-    <%= f.text_field :nombre, class: "text_formulario" ,placeholder:"Yoga CDMX" %>
-  </div>
-  <div class="field">
-
-
-<br>
-
-
-    <%= f.label :lugar, "Lugar donde sera el Evento " , class: "label_formulario"%><br>
-
-    <%= f.text_field :lugar , class: "text_formulario", id: 'e1' ,placeholder:"Angel de la Independencia"  %>
-  </div>
-
-   <div class="field">
-
-
-
-<br>
-
-    <%= f.label :direccion ,"Dirección ", class: "label_formulario"%><br>
-    <%= f.text_field :direccion , class: "text_formulario" ,placeholder:"Av Viaducto Rio de la Piedad y Rio Churubusco S/N, Granjas México, Iztacalco, 08400 Ciudad de México" %>
-  </div>
-<br>
-   
-
-
-
-   
-
-
-   </div>
-
-  <div class="col-xs-12">
-
-
-
-
-   <div class="field">
-
-
-
-
-                         
-
-          <label for="Selecciona fecha">Selecciona fechas</label>
-        
-          <input type="text" id="formaforma" name="from" width="100%">
-
-
-          <%= f.hidden_field :fecha_inicio , class: "text_formulario" ,:id=>'uno' %>
-          <%= f.hidden_field :fecha_fin , class: "text_formulario" ,:id=>'dos' %>
-
-                
-
-
-                       
-
-  
-
-        
-           <%= f.label :hora_inicio , class: "label_formulario"%>
-          <%= f.time_select :hora_inicio, :default=> {:hour=>"0",:minute=>"0"} %>
-       
-
-           
-          <%= f.label :hora_fin , class: "label_formulario"%>
-          <%= f.time_select :hora_fin %> <br>
-        
-</div> 
-<br>
-
-
-
-
-
-
-  <div class="field">
-     <%= f.label :imagen, "Imagen" , class: "label_formulario"%><br>
-      <%= f.text_field :imagen , class: "text_formulario" ,placeholder:"http://www.imagen.com/imagen.png"  %>
-  </div>
-  <div class="field">
-    <%= f.label :descripcion, "Descripción del Evento" , class: "label_formulario"%>
-    <br>
-    
-    <%= f.text_area :descripcion, class: "textarea_formulario" %>
-  </div>
-
-<div class="col-xs-12">
-
-  <div class="col-xs-4">
-   <div class="field">
-    <%= f.label :categoría, class: "label_formulario" %><br>
-
-     <%= f.select :categoria, options_for_select([ "Deportivo", "Cine", "Exposiciones", "Infantiles","Música","Cultura","Teatro","Aprendizaje","Tecnología" ], "Deportivo") %>
-    </div>
-  </div>
-
-  <div class="col-xs-4">
-  <div class="field">
-
-     <%= f.label :Entrada_Libre , class: "label_formulario"%><br>
-<select name=sbox onChane="cambio()" id="op" >
-<option value="Si">Si</option>
-<option value="No">No</option>
-</select>
-
-   <br> <%= f.label :Precio, class: "label_formulario",:id=>'preciolbl' %><br>
-    <%= f.text_field :precio, class: "text_formulario" ,placeholder:"$100" , :id=>'precio', value:"Entrada Libre"   %>
-  </div>
-  </div>
-
-<div class="col-xs-4">
-   <div class="field">
-    <%= f.label :Capturado_por , class: "label_formulario"%><br>
-     <%= f.select :fuente, options_for_select([ "Secretaría de Turismo", "Secretaría de Cultura" ], "Secretaría de Turismo") %>
-  <!--  <%= f.text_field :fuente , class: "text_formulario" ,placeholder:"Instituto del Deporte" %>-->
-  </div>
-  </div>
-  </div>
-
-
-
- <div class="col-xs-12">
-  <div class="col-xs-6">
-  <div class="field">
-    <%= f.label :contacto, class: "label_formulario" %><br>
-    <%= f.text_field :contacto, class: "text_formulario" ,placeholder:"indeporte@indeporte.mx"  %>
-  </div>
-   </div>
-  <div class="col-xs-6">
-  <div class="field">
-    <%= f.label :página, class: "label_formulario" %><br>
-    <%= f.text_field :pagina, class: "text_formulario" ,placeholder:"www.indeporte.com.mx"  %>
-  </div>
-   </div><br>
-  </div>
-    <br></br>
-  <%= f.label :nombre, "Indica en el mapa en donde será el  Evento" , class: "label_formulario"%><br>
-     <div id="map_canvas" style="width:100%;height:300px;"></div>
-
-   <div class="col-xs-12">
-      <div class="col-xs-6">
-  <div class="field">
-  <span id:"lat"></span>  <%= f.hidden_field :latitud , :id=>'lat'%></span>
-  </div>
-  </div>
-  <div class="col-xs-6">
-  <div class="field">
-
-   <span id:"lng"> <%= f.hidden_field :longitud , :id=>'lng' %></span>
-  </div>
-  </div>
-  </div>
-  <br>
-  <div class="actions">
-    <%= f.submit %>
-  </div>
-  <br>
+<% if @evento.errors.any? %>
+<div id="error_explanation">
+  <h2><%= pluralize(@evento.errors.count, "error") %> prohibited this evento from being saved:</h2>
+  <ul>
+    <% @evento.errors.full_messages.each do |msg| %>
+    <li><%= msg %></li>
+    <% end %>
+  </ul>
 </div>
-
-   <div class="col-md-2 ">
-   </div>
- <!-- <div class="col-md-3 box1">
-   <div class="row">
-
+<% end %>
+<div class="row ">
+  <div class="col-md-2">
+  </div>
+  <div class="col-md-8 box1">
+    <div class="col-xs-12">
+      <br>
+      <div class="field">
+        <%= f.label :nombre, "Nombre del Evento " , class: "label_formulario"%><br>
+        <%= f.text_field :nombre, class: "text_formulario" ,placeholder:"Yoga CDMX" %>
+      </div>
+      <div class="field">
+        <br>
+        <%= f.label :lugar, "Lugar donde sera el Evento " , class: "label_formulario"%><br>
+        <%= f.text_field :lugar , class: "text_formulario", id: 'e1' ,placeholder:"Angel de la Independencia"  %>
+      </div>
+      <div class="field">
+        <br>
+        <%= f.label :direccion ,"Dirección ", class: "label_formulario"%><br>
+        <%= f.text_field :direccion , class: "text_formulario" ,placeholder:"Av Viaducto Rio de la Piedad y Rio Churubusco S/N, Granjas México, Iztacalco, 08400 Ciudad de México" %>
+      </div>
+      <br>
+      
+      
+    </div>
+    <div class="col-xs-12">
+      <div class="field">
+        
+        <label for="Selecciona fecha">Selecciona fechas</label>
+        
+        <input type="text" id="formaforma" name="from" width="100%">
+        <%= f.hidden_field :fecha_inicio , class: "text_formulario" ,:id=>'uno' %>
+        <%= f.hidden_field :fecha_fin , class: "text_formulario" ,:id=>'dos' %>
+        
+        
+        
+        
+        <%= f.label :hora_inicio , class: "label_formulario"%>
+        <%= f.time_select :hora_inicio, :default=> {:hour=>"0",:minute=>"0"} %>
+        
+        
+        <%= f.label :hora_fin , class: "label_formulario"%>
+        <%= f.time_select :hora_fin %> <br>
+        
+      </div>
+      <br>
+      <div class="field">
+        <%= f.label :imagen, "Imagen" , class: "label_formulario"%><br>
+        <%= f.text_field :imagen , class: "text_formulario" ,placeholder:"http://www.imagen.com/imagen.png"  %>
+      </div>
+      <div class="field">
+        <%= f.label :descripcion, "Descripción del Evento" , class: "label_formulario"%>
+        <br>
+        
+        <%= f.text_area :descripcion, class: "textarea_formulario" %>
+      </div>
+      <div class="col-xs-12">
+        <div class="col-xs-4">
+          <div class="field">
+            <%= f.label :categoría, class: "label_formulario" %><br>
+            <%= f.select :categoria, options_for_select([ "Deportivo", "Cine", "Exposiciones", "Infantiles","Música","Cultura","Teatro","Aprendizaje","Tecnología" ], "Deportivo") %>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="field">
+            <%= f.label :Entrada_Libre , class: "label_formulario"%><br>
+            <select name=sbox onChane="cambio()" id="op" >
+              <option value="Si">Si</option>
+              <option value="No">No</option>
+            </select>
+            <br> <%= f.label :Precio, class: "label_formulario",:id=>'preciolbl' %><br>
+            <%= f.text_field :precio, class: "text_formulario" ,placeholder:"$100" , :id=>'precio', value:"Entrada Libre"   %>
+          </div>
+        </div>
+        <div class="col-xs-4">
+          <div class="field">
+            <%= f.label :Capturado_por , class: "label_formulario"%><br>
+            <%= f.select :fuente, options_for_select([ "Secretaría de Turismo", "Secretaría de Cultura" ], "Secretaría de Turismo") %>
+            <!--  <%= f.text_field :fuente , class: "text_formulario" ,placeholder:"Instituto del Deporte" %>-->
+          </div>
+        </div>
+      </div>
+      <div class="col-xs-12">
+        <div class="col-xs-6">
+          <div class="field">
+            <%= f.label :contacto, class: "label_formulario" %><br>
+            <%= f.text_field :contacto, class: "text_formulario" ,placeholder:"indeporte@indeporte.mx"  %>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="field">
+            <%= f.label :página, class: "label_formulario" %><br>
+            <%= f.text_field :pagina, class: "text_formulario" ,placeholder:"www.indeporte.com.mx"  %>
+          </div>
+        </div><br>
+      </div>
+      <br></br>
+      <%= f.label :nombre, "Indica en el mapa en donde será el  Evento" , class: "label_formulario"%><br>
+      <div id="map_canvas" style="width:100%;height:300px;"></div>
+      <div class="col-xs-12">
+        <div class="col-xs-6">
+          <div class="field">
+            <span id:"lat"></span>  <%= f.hidden_field :latitud , :id=>'lat'%></span>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="field">
+            <span id:"lng"> <%= f.hidden_field :longitud , :id=>'lng' %></span>
+          </div>
+        </div>
+      </div>
+      <br>
+      <div class="actions">
+        <%= f.submit %>
+      </div>
+      <br>
+    </div>
+    <div class="col-md-2 ">
+    </div>
+    <!-- <div class="col-md-3 box1">
+      <div class="row">
       <pre>
         <IMG align="middle" SRC="/codigo.png" WIDTH=98% HEIGHT=210 >
-      </pre>
+</pre>
       <pre>
           <IMG align="middle" SRC="/eventario.png" WIDTH=98% HEIGHT=210 >
-      </pre>
+</pre>
       <pre>
           <IMG align="middle" SRC="/labplc.jpg" WIDTH=98% HEIGHT=210 >
-      </pre>
+</pre>
       </div>
-   </div>-->
-
-    </div></div>
-<% end %>
-<%= javascript_include_tag "datepick.plugin" %>
-<%= javascript_include_tag "datepick"%>
-<%= javascript_include_tag "typeahead" %>
-<%= javascript_include_tag "forma" %>
-
-
+    </div>-->
+  </div></div>
+  <% end %>
+  <%= javascript_include_tag "datepick.plugin" %>
+  <%= javascript_include_tag "datepick"%>
+  <%= javascript_include_tag "typeahead" %>
+  <%= javascript_include_tag "forma" %>

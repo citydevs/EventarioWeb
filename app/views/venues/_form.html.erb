@@ -21,15 +21,22 @@
     <%= f.label :direccion %><br>
     <%= f.text_field :direccion %>
   </div>
-  <div class="field">
-    <%= f.label :latitud %><br>
-    <%= f.text_field :latitud %>
-  </div>
-  <div class="field">
-    <%= f.label :longitud %><br>
-    <%= f.text_field :longitud %>
-  </div>
+  <%= f.label :nombre, "Indica en el mapa en donde será el  Evento" , class: "label_formulario"%><br>
+      <div id="map_canvas" style="width:100%;height:300px;"></div>
+      <div class="col-xs-12">
+        <div class="col-xs-6">
+          <div class="field">
+            <span id:"lat"></span>  <%= f.hidden_field :latitud , :id=>'lat'%></span>
+          </div>
+        </div>
+        <div class="col-xs-6">
+          <div class="field">
+            <span id:"lng"> <%= f.hidden_field :longitud , :id=>'lng' %></span>
+          </div>
+        </div>
+      </div>
   <div class="actions">
     <%= f.submit 'Guardar' %>
   </div>
 <% end %>
+<%= javascript_include_tag "eventos" %>
