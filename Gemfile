@@ -9,6 +9,7 @@ gem 'devise'
 gem 'jquery-ui-rails'
 gem "searchkick"
 gem 'cancancan', '~> 1.8'
+gem 'pry'
 # Use sqlite3 as the database for Active Record
 group :development, :test do
   gem 'sqlite3'
@@ -19,7 +20,7 @@ group :development, :test do
   gem 'guard-spork', '1.5.0'
   gem 'childprocess'
   gem 'annotate'
-  gem 'pry'
+  
   gem "quiet_assets", "~> 1.0.2"
 
 end
@@ -66,4 +67,5 @@ end
 
 group :production do
   gem 'pg'
+  gem 'rails_12factor'
 end
