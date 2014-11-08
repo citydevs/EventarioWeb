@@ -49,6 +49,10 @@ class Evento < ActiveRecord::Base
     @distancia = val.round(2)
   end
 
+  def self.by_category(category_array)
+    Evento.where("lower(categoria) in (?)", category_array)
+  end
+
   def quitar_fecha
     puts hora_inicio = 0
     self.hora_inicio = 0

@@ -9,17 +9,22 @@ class EventosController < ApplicationController
   # GET /eventos
   # GET /eventos.json
   def index
+    puts params[:categorias]
     respond_to do |format|
       format.html { @eventos = Evento.all.paginate(page: params[:page], per_page: 10)}
       format.json {
         if params[:lat] || params[:lon]
           distancia = params[:dist] ||= 1
-          @eventos = Evento.pasando_hoy.near([params[:lat], params[:lon]], distancia,{ units: :km})
+          @eventos = Evento.where(nil)
+          @eventos = @eventos.pasando_hoy.near([params[:lat], params[:lon]], distancia,{ units: :km})
+          @eventos = @eventos.by_category(params[:categorias].map(&:downcase)) if params[:categorias].present?
           @eventos.each do |evento|
             evento.distancia = evento.distance_to([params[:lat], params[:lon]], :km)
           end
         else
+          @eventos = Evento.where(nil)
           @eventos = Evento.pasando_hoy
+          @eventos = @eventos.by_category(params[:categorias].map(&:downcase)) if params[:categorias].present?
         end
 
       }
