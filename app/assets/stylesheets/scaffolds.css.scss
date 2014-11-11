@@ -1,5 +1,6 @@
 html,body {
   height:100%;
+  font-family: 'Open Sans', sans-serif;
    //
     //background:center no-repeat fixed url('/assets/example/bg_suburb.jpg');
 }
@@ -9,14 +10,14 @@ html,body {
 }
 
 .navbar-trans {
-  background-color:#F31734;
-    color:#F31734;
+  background-color:#076FEF;
+    color:#fff;
     
 
 }
 
 .navbar-trans li>a:hover,.navbar-trans li>a:focus {
-  background-color:#E40825;
+  background-color:#076FEF;
 }
 
 .navbar-trans a{

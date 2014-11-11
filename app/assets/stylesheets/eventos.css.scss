@@ -1,6 +1,7 @@
  // Place all the styles related to the Eventos controller here.
 // They will automatically be included in application.css.
 // You can use Sass (SCSS) here: http://sass-lang.com/
+@import url(http://fonts.googleapis.com/css?family=Open+Sans:300italic,400italic,600italic,700italic,800italic,400,300,600,700,800);
 #mapa{
 
   height:600px;
@@ -19,20 +20,24 @@
 }
 
 .eventos_titulos_textos{
-
  color:#000;
  font-size:60%;
-
-
  }
 
 .eventos_textos{
-
- color:#000;
- //font-size:60%;
-
+  color:#fff;
+  font-family:Georgia, serif;
+  font-style:italic;
+  border:1px solid #fff;
+  font-size:2rem;
+  width:auto;
+  width: 40%;
+  display: inline-block;
+  vertical-align: top;
+  margin:0;
 
  }
+
  th,td
 {
 padding:5px;
@@ -60,16 +65,16 @@ border-style:none;
 max-height: 2px;
 height: 2px;
 width:100%;
-background-color: rgba(215, 44, 44, 1);
+background-color: rgba(7, 108, 239, 0);
  }
 
  #espacio{
 border-style:none;
-background-color: rgba(215, 44, 44, 0);
+background-color: rgba(7, 108, 239, 0);
  }
 
  #box{
- background-color:#F31734;
+ background-color:#076FEF;
  }
 
  .titulo{
@@ -80,26 +85,35 @@ background-color: rgba(215, 44, 44, 0);
  }
 
 input.localizarme{
-    background: #fff url('/flecha.png') no-repeat top left;
+    background: #000 url('/flecha.png') no-repeat top left;
     padding-left: 27px;
     height: 37px;
     color: white;
     width: 37px;
     border:none;
+    border-radius:3px;
+  vertical-align: top;
+
 
 }
 input.buscar{
-    background: #fff url('/search.png') no-repeat top left;
+    background: #000 url('/flecha.png') no-repeat top left;
     padding-left: 27px;
     height: 37px;
     color: white;
     width: 37px;
     border:none;
-}
+    border-radius:3px;
+  vertical-align: top;
+
+  }
 input.barra{
-    width:67%;
+    width:41%;
    // padding-left: 36px;
     height: 37px;
     border:none;
+    display: inline-block;
+  vertical-align: top;
+
 
 }

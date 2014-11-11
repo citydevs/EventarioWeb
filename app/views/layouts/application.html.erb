@@ -50,8 +50,8 @@
 
         <!--<li ><%= link_to "Eventario", root_path %></li>-->
 <!--        <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "Buscar Eventos", mapa_path %></li>-->
-        <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "Eventario",root_path  %></li>
-         <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "Descargar Aplicación", aplicacion_path %></li>
+        <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "INFORMACIÓN",root_path  %></li>
+         <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "DESCARGAR APP", aplicacion_path %></li>
 
 
         <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li> <li>&nbsp;</li>
@@ -113,7 +113,7 @@
       </div> -->
 
        <div class="col-xs-6 col-md-3 column">
-        <h4>Aceeso a Secretarías</h4>
+        <h4>Acceso a Secretarías</h4>
         <ul class="nav">
            <li><%= link_to "Registrar Nuevo Evento", new_evento_path %></li>
              <% if user_signed_in? %>
