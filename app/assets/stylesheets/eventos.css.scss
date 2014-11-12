@@ -85,7 +85,8 @@ background-color: rgba(7, 108, 239, 0);
  }
 
 input.localizarme{
-    background: #000 url('/flecha.png') no-repeat top left;
+    background: #000 no-repeat top left;
+    background-image: image-url("flecha.png");
     padding-left: 27px;
     height: 37px;
     color: white;
@@ -97,7 +98,7 @@ input.localizarme{
 
 }
 input.buscar{
-    background: #000 url('/flecha.png') no-repeat top left;
+    background: #000 url('flecha.png') no-repeat top left;
     padding-left: 27px;
     height: 37px;
     color: white;
