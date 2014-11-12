@@ -78,19 +78,94 @@ background-color: #F31734;
 }
 
 footer {
-  background-color:#494949;
-    color:#ddd;
+  background-color:#000;
+    color:#fff;
     min-height:100px;
     padding-top:20px;
     padding-bottom:40px;
 }
 
 footer .nav>li>a {
-    padding:3px;
+    padding:0 10px;
     color:#ccc;
 }
 
 footer .nav>li>a:hover {
   background-color:transparent;
   color:#fff;
+}
+.redes_footer{
+  margin:0 0 20px 0!important;
+  padding:0!important;
+}
+.redes_footer li{
+  display:inline-block;
+  width:50px;
+}
+.redes_footer li a img{
+  width:80%;
+}
+.nav_footer a{
+  color:#ccc;
+}
+
+.nav_footer li{
+  display:inline-block;
+  border-left:1px solid #ccc;
+  height:20px;
+}
+.nav_footer li:first-child{
+  border-left:none;
+}
+.registrar_evento{
+  float:right;
+  background:#fff;
+  color:#076FEF;
+  padding:15px 20px;
+  font-style:italic;
+  margin:20px 0 0 0;
+}
+.registrar_evento:hover{
+  text-decoration:none;
+  background:#076FEF;
+  color:#fff;
+
+}
+@media (max-width: 320px) {
+  .eventos_textos{
+  font-size:1.4rem;
+  width: 100%;
+  display: inline-block;
+  vertical-align: top;
+  margin: 0 0 5% 0;
+  padding: 10px;
+  text-align: center;
+ }
+ input.barra{
+  width:100%;
+  margin:0 0 3% 0;
+ }
+ input.buscar{
+
+ }
+ .registrar_evento{
+  float:left;
+  margin:20px 0 0 20px;
+
+ }
+ footer .nav>li>a {
+    padding:0 3px;
+    color:#ccc;
+    font-size:1rem;
+  }
+  .redes_footer{
+    margin:0 0 10px 0!important;
+    padding:0!important;
+  }
+  .nav_footer li{
+  display:inline-block;
+  border-left:1px solid #ccc;
+  height:15px;
+  }
+
 }

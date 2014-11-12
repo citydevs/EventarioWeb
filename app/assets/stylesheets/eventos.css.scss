@@ -29,15 +29,17 @@
   font-family:Georgia, serif;
   font-style:italic;
   border:1px solid #fff;
-  font-size:2rem;
-  width:auto;
-  width: 40%;
+  font-size:1.6rem;
+  width: 60%;
   display: inline-block;
   vertical-align: top;
-  margin:0;
-
+  margin: 0 0 2% 0;
+  padding: 10px;
+  text-align: center;
  }
-
+.barra_header{
+  margin:2% 0 0 0;
+}
  th,td
 {
 padding:5px;
@@ -86,35 +88,36 @@ background-color: rgba(7, 108, 239, 0);
 
 input.localizarme{
     background: #000 no-repeat top left;
-    background-image: image-url("flecha.png");
+    background-image: image-url("flecha.png") no-repeat;
     padding-left: 27px;
     height: 37px;
     color: white;
     width: 37px;
     border:none;
     border-radius:3px;
-  vertical-align: top;
+    vertical-align: top;
+    background-size:cover;
 
 
 }
 input.buscar{
-    background: #000 url('flecha.png') no-repeat top left;
+    background: #000 url('flecha.png') no-repeat;
     padding-left: 27px;
     height: 37px;
     color: white;
     width: 37px;
     border:none;
     border-radius:3px;
-  vertical-align: top;
+    vertical-align: top;
+    background-size:cover;
 
   }
 input.barra{
-    width:41%;
-   // padding-left: 36px;
-    height: 37px;
-    border:none;
-    display: inline-block;
+  width:51%;  
+  height: 37px;
+  border:none;
+  display: inline-block;
   vertical-align: top;
-
-
+  padding: 0 0 0 2%;
 }
+

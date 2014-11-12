@@ -72,61 +72,28 @@
 <footer id="footer">
 <div class="container">
   <div class="row">
-    <div class="col-xs-6 col-sm-6 col-md-3 column">
-        <h4>Información</h4>
-        <ul class="nav">
-          <li><%= link_to "Acerca de", about_path %></li>
-          <li><%= link_to "Términos de uso", privacy_path %></li>
-          <!-- <li><a href="http://codigo.labplc.mx/">Código CDMX</a></li>
-          <li><a href="http://labplc.mx/">LabPLC</a></li> -->
-
+    <div class="col-xs-12 col-sm- col-md-6 column">
+        <ul class="redes_footer">
+          <li>
+              <a href="https://twitter.com/EventarioCDMX"><img src="/twt.png"></a>
+          </li>
+          <li><a href="https://www.facebook.com/EventarioCDMX"><img src="/fb.png"></a></li>
         </ul>
-      </div>
-    <div class="col-xs-6 col-md-3 column">
-        <h4>Redes Sociales</h4>
-        <ul class="nav">
-
-           <li><a href="https://twitter.com/EventarioCDMX">Twitter</a></li>
-          <li><a href="https://www.facebook.com/EventarioCDMX">Facebook</a></li>
-
-        </ul>
-      </div>
-   <!-- <div class="col-xs-6 col-md-3 column">
-        <h4>Contact Us</h4>
-        <ul class="nav">
-          <li><a href="#">Email</a></li>
-          <li><a href="#">Headquarters</a></li>
-          <li><a href="#">Management</a></li>
-          <li><a href="#">Support</a></li>
-        </ul>
-      </div>-->
-    <!-- <div class="col-xs-6 col-md-3 column">
-        <h4>Código CDMX</h4>
-        <ul class="nav">
-          <li><a href="http://verificalo.mx">Verifícalo</a></li>
-          <li><a href="http://traxi.mx">Traxi</a></li>
-          <li><a href="http://infoeconomica.mx">InfoEconómica</a></li>
-          <li><a href="http://cuidamisalud.mx">Cuídate!</a></li>
-          <li><a href="http://checateaqui.mx">Checate Aquí</a></li>
-
-        </ul>
-      </div> -->
-
-       <div class="col-xs-6 col-md-3 column">
-        <h4>Acceso a Secretarías</h4>
-        <ul class="nav">
-           <li><%= link_to "Registrar Nuevo Evento", new_evento_path %></li>
+        <ul class="nav nav_footer">
              <% if user_signed_in? %>
              <li><%= link_to "Admin Users", users_path %></li>
             Bienvenido <strong><%= current_user.email %></strong>.
-            <%= link_to 'Editar Perfil', edit_user_registration_path, :class => 'navbar-link' %> |
-            <%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %>
+            <li><%= link_to 'Editar Perfil', edit_user_registration_path, :class => '' %> </li>
+            <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
           <% else %>
-            <%= link_to "Registrarse", new_user_registration_path, :class => 'navbar-link'  %> |
-            <%= link_to "Iniciar Sesión", new_user_session_path, :class => 'navbar-link'  %>
+            <li><%= link_to "Registrarse", new_user_registration_path, :class => ''  %> </li>
+            <li><%= link_to "Iniciar Sesión", new_user_session_path, :class => ''  %></li>
           <% end %>
+           <li><%= link_to "Acerca", about_path %></li>
+          <li><%= link_to "Términos de uso", privacy_path %></li>
         </ul>
       </div>
+      <%= link_to "Registrar Nuevo Evento", new_evento_path, :class => 'registrar_evento' %>
   </div>
 </div>
 </footer>
