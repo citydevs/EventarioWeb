@@ -28,14 +28,14 @@
   color:#000;
   font-family:Georgia, serif;
   font-style:italic;
-  border:1px solid #fff;
+  border:0px solid #fff;
   font-size:1.6rem;
-  width: 60%;
+  width: 100%;
   display: inline-block;
   vertical-align: top;
   margin: 0 0 2% 0;
   padding: 10px;
-  text-align: center;
+  text-align: left;
  }
 .barra_header{
   margin:2% 0 0 0;
@@ -85,10 +85,12 @@ background-color: rgba(7, 108, 239, 0);
  src: url("/fuentes/NIISans-Bold.ttf") format ("ttf");
  font-size:25px;
  }
-
+.contenedor{
+   background-color:#fff;
+}
 input.localizarme{
-    background: #000 no-repeat top left;
-    background-image: image-url("flecha.png") no-repeat;
+   
+    background: #000 url('flecha.png') no-repeat;
     padding-left: 27px;
     height: 37px;
     color: white;
@@ -101,7 +103,7 @@ input.localizarme{
 
 }
 input.buscar{
-    background: #000 url('flecha.png') no-repeat;
+    background: #000 url('buscar.png') no-repeat;
     padding-left: 27px;
     height: 37px;
     color: white;

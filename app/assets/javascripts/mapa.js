@@ -181,7 +181,7 @@ function geoSuccess(position) {
     var lat = position.coords.latitude;
     var lng = position.coords.longitude;
     var centro_pos, distancia_centro;
-  console.log( "buscando");
+  console.log( "buscando" +lat + lng);
   create_cards();
     clean_map(window.map);
     window.center_marker.setMap(null);
@@ -199,7 +199,7 @@ function geoSuccess(position) {
         url: 'marker.png'
       }
     });
-   // alert("lat:" + lat + " lng:" + lng);
+  //  alert("lat:" + lat + " lng:" + lng);
 }
 function geoError() {
     //alert("Geocoder failed.");
@@ -298,24 +298,24 @@ get_current_location = function() {
 get_Address=function () {
 
    console.log("direccion");
-   var sAddress = document.getElementById("lugar").value + "Mexico, D.F.";
+   var sAddress = document.getElementById("lugar").value + ",Mexico, D.F.";
  console.log(sAddress);
   geocoder.geocode( { 'address': sAddress}, function(results, status) { 
 
 if (status == google.maps.GeocoderStatus.OK) 
   {
-  
+  console.log("resultados"+results[0].geometry);
    map.setCenter(results[0].geometry.location);
    // var marker = new google.maps.Marker({  map: map,  position: results[0].geometry.location });
-    console.log(results[0].geometry.location.A);
-    console.log(results[0].geometry.location.k);
+    console.log("imprimo a"+results[0].geometry.location.lng());
+    console.log("imprimo b"+results[0].geometry.location.lat());
     var centro_pos;
   console.log( "buscando");
   create_cards();
     clean_map(window.map);
     window.center_marker.setMap(null);
     window.center_marker = null;
-    gm_center = new google.maps.LatLng(results[0].geometry.location.k, results[0].geometry.location.A);
+    gm_center = new google.maps.LatLng(results[0].geometry.location.lat(), results[0].geometry.location.lng());
      window.map.panTo(gm_center);
 
      load_from_position(window.map,results[0].geometry.location.k, results[0].geometry.location.A);
