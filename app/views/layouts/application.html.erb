@@ -50,7 +50,7 @@
 
         <!--<li ><%= link_to "Eventario", root_path %></li>-->
 <!--        <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "Buscar Eventos", mapa_path %></li>-->
-        <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "INFORMACIÓN",root_path  %></li>
+        <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "INICIO",root_path  %></li>
          <li class="<%= 'active' if current_page?(mapa_path) %>"><%= link_to "DESCARGAR APP", aplicacion_path %></li>
 
 
@@ -81,8 +81,10 @@
         </ul>
         <ul class="nav nav_footer">
              <% if user_signed_in? %>
-             <li><%= link_to "Admin Users", users_path %></li>
-            Bienvenido <strong><%= current_user.email %></strong>.
+              Bienvenido <strong><%= current_user.email %></strong>.
+             <li><%= link_to "Administrar Usuarios", users_path %></li>
+              <li><%= link_to "Agregar Venue (Recinto)", venues_path %></li>
+           
             <li><%= link_to 'Editar Perfil', edit_user_registration_path, :class => '' %> </li>
             <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>
           <% else %>
