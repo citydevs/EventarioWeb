@@ -83,7 +83,7 @@
              <% if user_signed_in? %>
               Bienvenido <strong><%= current_user.email %></strong>.
              <li><%= link_to "Administrar Usuarios", users_path %></li>
-              <li><%= link_to "Agregar Venue (Recinto)", venues_path %></li>
+              <li><%= link_to "Agregar Venue (Recinto)", new_venue_path %></li>
            
             <li><%= link_to 'Editar Perfil', edit_user_registration_path, :class => '' %> </li>
             <li><%= link_to "Cerrar Sesión", destroy_user_session_path, method: :delete %></li>

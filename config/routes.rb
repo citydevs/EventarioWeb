@@ -15,6 +15,7 @@ Eventario::Application.routes.draw do
   devise_for :users
   resources :eventos
   resources :users
+  resources :venues
   get '/mapa'=> 'eventos#mapa', as: 'mapa'
   get '/about'    => 'high_voltage/pages#show', id: 'about'
   get '/contact'  => 'high_voltage/pages#show', id: 'contact'
@@ -23,6 +24,7 @@ Eventario::Application.routes.draw do
   get '/hola'    => 'high_voltage/pages#show', id: 'hola'
   get '/aplicacion'    => 'high_voltage/pages#show', id: 'aplicacion'
   get '/eventos_new'    => 'high_voltage/eventos#show', id: 'new'
+  get '/venues_new'    => 'high_voltage/venues#show', id: 'new'
   root :to => 'high_voltage/pages#show', id: 'home'
 
 end
