@@ -31,7 +31,9 @@
       <th>Pagina</th>
       <th>Latitud</th>
       <th>Longitud</th>-->
+       <th>Fuente</th>
       <th>Mostrar</th>
+      <th>Editar</th>
       
     </tr>
   </thead>
@@ -57,8 +59,9 @@
         <td><%= evento.pagina %></td>
         <td><%= evento.latitud %></td>
         <td><%= evento.longitud %></td>-->
+        <td><%= evento.fuente %></td>
         <td><%= link_to 'Mostrar', evento %></td>
-      <!--  <td><%= link_to 'Edit', edit_evento_path(evento) %></td>
+       <td><%= link_to 'Editar', edit_evento_path(evento) %></td>  <!--
         <td><%= link_to 'Destroy', evento, method: :delete, data: { confirm: 'Are you sure?' } %></td>-->
         
       </tr>
